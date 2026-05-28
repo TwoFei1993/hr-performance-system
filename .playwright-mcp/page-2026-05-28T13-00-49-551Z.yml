@@ -1,0 +1,75 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "Superpowers Brainstorming" [level=1] [ref=e3]:
+      - link "Superpowers Brainstorming" [ref=e4] [cursor=pointer]:
+        - /url: https://github.com/obra/superpowers
+    - generic [ref=e5]: Connected
+  - generic [ref=e7]:
+    - heading "系统整体架构设计" [level=2] [ref=e8]
+    - paragraph [ref=e9]: 方案 A — 分层 Agent 流水线，请确认各层设计是否符合预期
+    - generic [ref=e10]:
+      - heading "🏗️ 技术栈" [level=3] [ref=e11]
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: 前端
+          - generic [ref=e15]:
+            - text: Next.js 15.4 + React 19
+            - text: Tailwind CSS v4
+            - text: TypeScript
+            - text: Recharts（图表）
+            - text: SSE（实时推送）
+        - generic [ref=e16]:
+          - generic [ref=e17]: 后端
+          - generic [ref=e18]:
+            - text: Python FastAPI
+            - text: MiniMax M2.7 API
+            - text: SQLite（mock 数据）
+            - text: APScheduler（定时任务）
+            - text: SSE 推送
+    - generic [ref=e19]:
+      - heading "🤖 四层 Agent 架构" [level=3] [ref=e20]
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]: ① 数据采集 Agent
+          - generic [ref=e24]: 生成 120 名员工 mock 数据（HR/OKR/360评估/业务指标），定时刷新，模拟多系统数据汇聚
+        - generic [ref=e25]: ↓ 结构化员工绩效数据
+        - generic [ref=e26]:
+          - generic [ref=e27]: ② 分析 Agent
+          - generic [ref=e28]: 调用 MiniMax M2.7，对每位员工进行得分分析、履职评估，输出升职/调薪/淘汰/1:1 建议
+        - generic [ref=e29]: ↓ 结构化建议列表
+        - generic [ref=e30]:
+          - generic [ref=e31]: ③ 辅助决策 Agent（Nerve Center）
+          - generic [ref=e32]: 汇总分析结果，生成日/周/月报告，推送给总经理 Dashboard，支持一键确认或驳回
+        - generic [ref=e33]: ↓ 总经理决议
+        - generic [ref=e34]:
+          - generic [ref=e35]: ④ 执行 Agent
+          - generic [ref=e36]: 接收决议后自动执行：更新 HR 系统职级、触发调薪流程、发送 1:1 邀请、记录月会决议
+    - generic [ref=e37]:
+      - heading "📱 主要页面" [level=3] [ref=e38]
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: 🎯
+          - generic [ref=e42]: Nerve Center
+          - generic [ref=e43]: 总经理主控台
+        - generic [ref=e44]:
+          - generic [ref=e45]: 📊
+          - generic [ref=e46]: 员工绩效
+          - generic [ref=e47]: 120人数据总览
+        - generic [ref=e48]:
+          - generic [ref=e49]: 🤖
+          - generic [ref=e50]: Agent 状态
+          - generic [ref=e51]: 实时执行流程
+        - generic [ref=e52]:
+          - generic [ref=e53]: 📋
+          - generic [ref=e54]: 决策审批
+          - generic [ref=e55]: 待确认事项列表
+        - generic [ref=e56]:
+          - generic [ref=e57]: 📅
+          - generic [ref=e58]: 月会管理
+          - generic [ref=e59]: 自动生成月会议程
+        - generic [ref=e60]:
+          - generic [ref=e61]: ⚙️
+          - generic [ref=e62]: HR 系统
+          - generic [ref=e63]: 调薪/职级确认
+    - paragraph [ref=e64]: 以上设计是否符合预期？请在终端回复确认或提出修改意见
+  - generic [ref=e65]: Click an option above, then return to the terminal

@@ -6,10 +6,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import func, select
 
 from agents.data_collector import seed_database
+from routers.agents import router as agents_router
 from routers.employees import router as employees_router
 from routers.health import router as health_router
 from services.database import EmployeeORM, get_db, init_db
 from services.logger import logger
+from services.scheduler import scheduler, setup_scheduler
 
 
 @asynccontextmanager
@@ -27,7 +29,14 @@ async def lifespan(app: FastAPI):
         else:
             logger.info(f"数据库已有 {count} 条员工记录，跳过 seed")
         break
+    # 启动定时任务
+    setup_scheduler(app)
+    scheduler.start()
+    logger.info("定时任务调度器已启动")
     yield
+    # 关闭定时任务
+    scheduler.shutdown(wait=False)
+    logger.info("定时任务调度器已关闭")
 
 
 app = FastAPI(title="绩效管理 Agent API", version="0.1.0", lifespan=lifespan)
@@ -42,6 +51,7 @@ app.add_middleware(
 
 app.include_router(health_router, prefix="/api")
 app.include_router(employees_router, prefix="/api")
+app.include_router(agents_router, prefix="/api")
 
 logger.info("绩效管理 Agent 服务启动")
 

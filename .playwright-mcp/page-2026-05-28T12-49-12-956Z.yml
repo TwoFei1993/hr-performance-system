@@ -1,0 +1,50 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "Superpowers Brainstorming" [level=1] [ref=e3]:
+      - link "Superpowers Brainstorming" [ref=e4] [cursor=pointer]:
+        - /url: https://github.com/obra/superpowers
+    - generic [ref=e5]: Connected
+  - generic [ref=e7]:
+    - heading "绩效管理 Agent 系统 — 整体架构方案" [level=2] [ref=e8]
+    - paragraph [ref=e9]: 请选择你最认可的整体技术架构方向
+    - generic [ref=e10]:
+      - generic [ref=e11] [cursor=pointer]:
+        - generic [ref=e12]: A
+        - generic [ref=e13]:
+          - heading "全栈 Web 应用（推荐）" [level=3] [ref=e14]
+          - paragraph [ref=e15]:
+            - strong [ref=e16]: 前端：
+            - text: Next.js 15 + React 19 + Tailwind CSS v4
+            - strong [ref=e17]: 后端：
+            - text: Python FastAPI + Claude API（多 Agent 编排）
+            - strong [ref=e18]: 特点：
+            - text: 完整的 Dashboard UI、实时推送、Agent 可视化执行流程
+            - strong [ref=e19]: 适合：
+            - text: 演示给管理层，交互体验最佳
+      - generic [ref=e20] [cursor=pointer]:
+        - generic [ref=e21]: B
+        - generic [ref=e22]:
+          - heading "纯 Python 后端 + 简单前端" [level=3] [ref=e23]
+          - paragraph [ref=e24]:
+            - strong [ref=e25]: 前端：
+            - text: Streamlit 或 Gradio（快速搭建）
+            - strong [ref=e26]: 后端：
+            - text: Python + Claude API
+            - strong [ref=e27]: 特点：
+            - text: 开发速度最快，2-3天可出 demo
+            - strong [ref=e28]: 适合：
+            - text: 内部技术验证，不追求 UI 精美度
+      - generic [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: C
+        - generic [ref=e31]:
+          - heading "纯前端 Mock Demo" [level=3] [ref=e32]
+          - paragraph [ref=e33]:
+            - strong [ref=e34]: 前端：
+            - text: Next.js 15 + 全部 mock 数据
+            - strong [ref=e35]: 后端：
+            - text: 无（或极简 mock API）
+            - strong [ref=e36]: 特点：
+            - text: 最快出视觉效果，无需配置 AI 环境
+            - strong [ref=e37]: 适合：
+            - text: PPT 级别演示，展示 UI 交互流程
+  - generic [ref=e38]: Click an option above, then return to the terminal

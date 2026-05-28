@@ -1,0 +1,91 @@
+<h2>系统整体架构设计</h2>
+<p class="subtitle">方案 A — 分层 Agent 流水线，请确认各层设计是否符合预期</p>
+
+<div class="section">
+  <h3>🏗️ 技术栈</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:8px">
+      <div style="font-weight:bold;color:#1e293b;margin-bottom:6px">前端</div>
+      <div style="font-size:12px;color:#475569;line-height:1.8">
+        Next.js 15.4 + React 19<br>
+        Tailwind CSS v4<br>
+        TypeScript<br>
+        Recharts（图表）<br>
+        SSE（实时推送）
+      </div>
+    </div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:8px">
+      <div style="font-weight:bold;color:#1e293b;margin-bottom:6px">后端</div>
+      <div style="font-size:12px;color:#475569;line-height:1.8">
+        Python FastAPI<br>
+        MiniMax M2.7 API<br>
+        SQLite（mock 数据）<br>
+        APScheduler（定时任务）<br>
+        SSE 推送
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🤖 四层 Agent 架构</h3>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <div style="background:#eff6ff;border-left:4px solid #3b82f6;padding:10px 14px;border-radius:0 6px 6px 0">
+      <div style="font-weight:bold;color:#1d4ed8;font-size:13px">① 数据采集 Agent</div>
+      <div style="font-size:12px;color:#475569;margin-top:2px">生成 120 名员工 mock 数据（HR/OKR/360评估/业务指标），定时刷新，模拟多系统数据汇聚</div>
+    </div>
+    <div style="text-align:center;color:#94a3b8;font-size:11px">↓ 结构化员工绩效数据</div>
+    <div style="background:#f0fdf4;border-left:4px solid #22c55e;padding:10px 14px;border-radius:0 6px 6px 0">
+      <div style="font-weight:bold;color:#15803d;font-size:13px">② 分析 Agent</div>
+      <div style="font-size:12px;color:#475569;margin-top:2px">调用 MiniMax M2.7，对每位员工进行得分分析、履职评估，输出升职/调薪/淘汰/1:1 建议</div>
+    </div>
+    <div style="text-align:center;color:#94a3b8;font-size:11px">↓ 结构化建议列表</div>
+    <div style="background:#fefce8;border-left:4px solid #eab308;padding:10px 14px;border-radius:0 6px 6px 0">
+      <div style="font-weight:bold;color:#a16207;font-size:13px">③ 辅助决策 Agent（Nerve Center）</div>
+      <div style="font-size:12px;color:#475569;margin-top:2px">汇总分析结果，生成日/周/月报告，推送给总经理 Dashboard，支持一键确认或驳回</div>
+    </div>
+    <div style="text-align:center;color:#94a3b8;font-size:11px">↓ 总经理决议</div>
+    <div style="background:#fdf4ff;border-left:4px solid #a855f7;padding:10px 14px;border-radius:0 6px 6px 0">
+      <div style="font-weight:bold;color:#7e22ce;font-size:13px">④ 执行 Agent</div>
+      <div style="font-size:12px;color:#475569;margin-top:2px">接收决议后自动执行：更新 HR 系统职级、触发调薪流程、发送 1:1 邀请、记录月会决议</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>📱 主要页面</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px">
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:8px;border-radius:6px;text-align:center">
+      <div style="font-size:16px">🎯</div>
+      <div style="font-weight:bold;color:#1e293b">Nerve Center</div>
+      <div style="color:#64748b">总经理主控台</div>
+    </div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:8px;border-radius:6px;text-align:center">
+      <div style="font-size:16px">📊</div>
+      <div style="font-weight:bold;color:#1e293b">员工绩效</div>
+      <div style="color:#64748b">120人数据总览</div>
+    </div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:8px;border-radius:6px;text-align:center">
+      <div style="font-size:16px">🤖</div>
+      <div style="font-weight:bold;color:#1e293b">Agent 状态</div>
+      <div style="color:#64748b">实时执行流程</div>
+    </div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:8px;border-radius:6px;text-align:center">
+      <div style="font-size:16px">📋</div>
+      <div style="font-weight:bold;color:#1e293b">决策审批</div>
+      <div style="color:#64748b">待确认事项列表</div>
+    </div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:8px;border-radius:6px;text-align:center">
+      <div style="font-size:16px">📅</div>
+      <div style="font-weight:bold;color:#1e293b">月会管理</div>
+      <div style="color:#64748b">自动生成月会议程</div>
+    </div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:8px;border-radius:6px;text-align:center">
+      <div style="font-size:16px">⚙️</div>
+      <div style="font-weight:bold;color:#1e293b">HR 系统</div>
+      <div style="color:#64748b">调薪/职级确认</div>
+    </div>
+  </div>
+</div>
+
+<p style="text-align:center;color:#64748b;font-size:12px;margin-top:16px">以上设计是否符合预期？请在终端回复确认或提出修改意见</p>
