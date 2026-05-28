@@ -61,13 +61,21 @@ async def get_agents_status() -> list[AgentStatusInfo]:
 
 
 async def _run_analysis_background(scope: str) -> None:
-    """后台异步执行分析任务"""
+    """后台异步执行分析任务，完成后自动触发决策 Agent"""
     from agents.analysis_agent import analysis_agent
+    from agents.decision_agent import decision_agent
     async with AsyncSessionLocal() as db:
         try:
             await analysis_agent.run_analysis(scope, db)
         except Exception as e:
             logger.error(f"后台分析任务失败 [{scope}]: {e}")
+            return
+    # 分析完成后，自动生成决策（使用新 session）
+    async with AsyncSessionLocal() as db:
+        try:
+            await decision_agent.generate_decisions(db)
+        except Exception as e:
+            logger.error(f"分析后自动生成决策失败: {e}")
 
 
 @router.post("/agents/trigger", response_model=TriggerResponse, status_code=202)

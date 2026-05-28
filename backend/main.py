@@ -7,8 +7,10 @@ from sqlalchemy import func, select
 
 from agents.data_collector import seed_database
 from routers.agents import router as agents_router
+from routers.decisions import router as decisions_router
 from routers.employees import router as employees_router
 from routers.health import router as health_router
+from routers.stream import router as stream_router
 from services.database import EmployeeORM, get_db, init_db
 from services.logger import logger
 from services.scheduler import scheduler, setup_scheduler
@@ -52,6 +54,8 @@ app.add_middleware(
 app.include_router(health_router, prefix="/api")
 app.include_router(employees_router, prefix="/api")
 app.include_router(agents_router, prefix="/api")
+app.include_router(decisions_router, prefix="/api")
+app.include_router(stream_router, prefix="/api")
 
 logger.info("绩效管理 Agent 服务启动")
 
