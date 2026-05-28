@@ -1,0 +1,35 @@
+# 环境变量（含真实密钥，不提交）
+.env
+
+# 日志文件
+logs/*.log
+logs/*.pid
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# 数据库
+backend/data/*.db
+
+# Node.js
+node_modules/
+.next/
+frontend/.next/
+frontend/out/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
