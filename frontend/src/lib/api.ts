@@ -1,10 +1,15 @@
 /**
- * API 客户端基础封装
- * baseURL 从环境变量读取，默认 http://localhost:8000
+ * API 客户端封装
+ * baseURL 通过 Next.js rewrites 代理到 localhost:8000
  */
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:8000'
+import type {
+  DashboardStats,
+  Decision,
+  AgentStatusInfo,
+} from '@/types'
+
+const BASE_URL = '/api'
 
 class ApiError extends Error {
   constructor(
@@ -30,19 +35,75 @@ async function request<T>(
   })
 
   if (!response.ok) {
-    throw new ApiError(response.status, `HTTP ${response.status}: ${response.statusText}`)
+    throw new ApiError(
+      response.status,
+      `HTTP ${response.status}: ${response.statusText}`,
+    )
   }
 
   return response.json() as Promise<T>
 }
 
-export const api = {
-  get: <T>(path: string) => request<T>(path),
-  post: <T>(path: string, body: unknown) =>
-    request<T>(path, { method: 'POST', body: JSON.stringify(body) }),
-  put: <T>(path: string, body: unknown) =>
-    request<T>(path, { method: 'PUT', body: JSON.stringify(body) }),
-  delete: <T>(path: string) => request<T>(path, { method: 'DELETE' }),
+// ── Dashboard ──────────────────────────────────────────────────────────────
+
+export async function fetchDashboardStats(): Promise<DashboardStats> {
+  return request<DashboardStats>('/dashboard/stats')
+}
+
+// ── Decisions ──────────────────────────────────────────────────────────────
+
+interface PaginatedDecisions {
+  items: Decision[]
+  total: number
+}
+
+export async function fetchPendingDecisions(
+  page = 1,
+  size = 20,
+): Promise<PaginatedDecisions> {
+  return request<PaginatedDecisions>(
+    `/decisions/pending?page=${page}&size=${size}`,
+  )
+}
+
+export async function approveDecision(
+  id: string,
+  resolvedBy = '总经理',
+): Promise<Decision> {
+  return request<Decision>(`/decisions/${id}/approve`, {
+    method: 'POST',
+    body: JSON.stringify({ resolved_by: resolvedBy }),
+  })
+}
+
+export async function rejectDecision(id: string): Promise<Decision> {
+  return request<Decision>(`/decisions/${id}/reject`, {
+    method: 'POST',
+    body: JSON.stringify({}),
+  })
+}
+
+export async function deferDecision(id: string): Promise<Decision> {
+  return request<Decision>(`/decisions/${id}/defer`, {
+    method: 'POST',
+    body: JSON.stringify({}),
+  })
+}
+
+// ── Agents ─────────────────────────────────────────────────────────────────
+
+export async function fetchAgentStatus(): Promise<AgentStatusInfo[]> {
+  return request<AgentStatusInfo[]>('/agents/status')
+}
+
+export async function triggerAgent(
+  agent: string,
+  scope: string,
+): Promise<void> {
+  await request<void>(`/agents/${agent}/trigger`, {
+    method: 'POST',
+    body: JSON.stringify({ scope }),
+  })
 }
 
 export { ApiError, BASE_URL }
