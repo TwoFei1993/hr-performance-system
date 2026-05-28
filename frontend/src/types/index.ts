@@ -67,3 +67,40 @@ export interface SSEEvent {
   data: unknown
   timestamp: string
 }
+
+export interface MeetingAgendaItem {
+  decision: Decision
+  order: number
+  confirmed: boolean | null
+}
+
+export interface MeetingAgenda {
+  id: string
+  date: string
+  totalItems: number
+  items: MeetingAgendaItem[]
+  summary: string
+  status: 'in_progress' | 'finished'
+}
+
+export interface MeetingMinutes {
+  id: string
+  date: string
+  totalDecisions: number
+  approvedCount: number
+  rejectedCount: number
+  deferredCount: number
+  decisions: Decision[]
+  executionResults: Array<{ decisionId: string; result: string }>
+  generatedAt: string
+}
+
+export interface Report {
+  id: string
+  type: ReportType
+  generatedAt: string
+  summary: string
+  content: Record<string, unknown>
+  employeeCount: number
+  decisionCount: number
+}

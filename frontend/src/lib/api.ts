@@ -7,6 +7,11 @@ import type {
   DashboardStats,
   Decision,
   AgentStatusInfo,
+  EmployeeRecord,
+  MeetingAgenda,
+  MeetingAgendaItem,
+  MeetingMinutes,
+  Report,
 } from '@/types'
 
 const BASE_URL = '/api'
@@ -100,10 +105,90 @@ export async function triggerAgent(
   agent: string,
   scope: string,
 ): Promise<void> {
-  await request<void>(`/agents/${agent}/trigger`, {
+  await request<void>('/agents/trigger', {
     method: 'POST',
-    body: JSON.stringify({ scope }),
+    body: JSON.stringify({ agent, scope }),
   })
+}
+
+// ── Employees ──────────────────────────────────────────────────────────────
+
+interface PaginatedEmployees {
+  items: EmployeeRecord[]
+  total: number
+  page: number
+  size: number
+}
+
+export async function fetchEmployees(params: {
+  page?: number
+  size?: number
+  department?: string
+  recommendation?: string
+  sortBy?: string
+  order?: string
+}): Promise<PaginatedEmployees> {
+  const q = new URLSearchParams()
+  if (params.page) q.set('page', String(params.page))
+  if (params.size) q.set('size', String(params.size))
+  if (params.department) q.set('department', params.department)
+  if (params.recommendation) q.set('recommendation', params.recommendation)
+  if (params.sortBy) q.set('sort_by', params.sortBy)
+  if (params.order) q.set('order', params.order)
+  return request<PaginatedEmployees>(`/employees?${q.toString()}`)
+}
+
+export async function fetchEmployee(id: string): Promise<EmployeeRecord> {
+  return request<EmployeeRecord>(`/employees/${id}`)
+}
+
+// ── Decision History ────────────────────────────────────────────────────────
+
+interface PaginatedDecisionHistory {
+  items: Decision[]
+  total: number
+}
+
+export async function fetchDecisionHistory(params: {
+  page?: number
+  size?: number
+  status?: string
+}): Promise<PaginatedDecisionHistory> {
+  const q = new URLSearchParams()
+  if (params.page) q.set('page', String(params.page))
+  if (params.size) q.set('size', String(params.size))
+  if (params.status) q.set('status', params.status)
+  return request<PaginatedDecisionHistory>(`/decisions/history?${q.toString()}`)
+}
+
+// ── Monthly Meeting ─────────────────────────────────────────────────────────
+
+export async function startMonthlyMeeting(): Promise<MeetingAgenda> {
+  return request<MeetingAgenda>('/monthly-meeting/start', { method: 'POST', body: JSON.stringify({}) })
+}
+
+export async function getMonthlyMeetingAgenda(): Promise<MeetingAgenda> {
+  return request<MeetingAgenda>('/monthly-meeting/agenda')
+}
+
+export async function confirmMeetingItem(
+  decisionId: string,
+  confirmed: boolean,
+): Promise<MeetingAgendaItem> {
+  return request<MeetingAgendaItem>('/monthly-meeting/confirm', {
+    method: 'POST',
+    body: JSON.stringify({ decision_id: decisionId, confirmed }),
+  })
+}
+
+export async function finishMonthlyMeeting(): Promise<MeetingMinutes> {
+  return request<MeetingMinutes>('/monthly-meeting/finish', { method: 'POST', body: JSON.stringify({}) })
+}
+
+// ── Reports ─────────────────────────────────────────────────────────────────
+
+export async function fetchReport(type: 'daily' | 'weekly' | 'monthly'): Promise<Report> {
+  return request<Report>(`/reports/${type}`)
 }
 
 export { ApiError, BASE_URL }
