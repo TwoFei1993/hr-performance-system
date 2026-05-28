@@ -12,34 +12,6 @@ from services.logger import logger
 
 router = APIRouter()
 
-# 其他 Agent 的占位状态（data_collector/decision/execution 尚未实现）
-_PLACEHOLDER_AGENTS: list[AgentStatusInfo] = [
-    AgentStatusInfo(
-        agent_name='data_collector',
-        status='idle',
-        last_run_at=None,
-        next_run_at=None,
-        run_count=0,
-        last_error=None,
-    ),
-    AgentStatusInfo(
-        agent_name='decision',
-        status='idle',
-        last_run_at=None,
-        next_run_at=None,
-        run_count=0,
-        last_error=None,
-    ),
-    AgentStatusInfo(
-        agent_name='execution',
-        status='idle',
-        last_run_at=None,
-        next_run_at=None,
-        run_count=0,
-        last_error=None,
-    ),
-]
-
 
 class TriggerRequest(BaseModel):
     agent: Literal['analysis', 'data_collector', 'decision', 'execution']
@@ -56,8 +28,23 @@ class TriggerResponse(BaseModel):
 async def get_agents_status() -> list[AgentStatusInfo]:
     """返回所有 Agent 的当前状态"""
     from agents.analysis_agent import analysis_agent
+    from agents.decision_agent import decision_agent
+    from agents.execution_agent import execution_agent
+
     analysis_status = await analysis_agent.get_status()
-    return [analysis_status] + _PLACEHOLDER_AGENTS
+    decision_status = await decision_agent.get_status()
+    execution_status = await execution_agent.get_status()
+
+    # data_collector 仍为占位
+    data_collector_status = AgentStatusInfo(
+        agent_name='data_collector',
+        status='idle',
+        last_run_at=None,
+        next_run_at=None,
+        run_count=0,
+        last_error=None,
+    )
+    return [data_collector_status, analysis_status, decision_status, execution_status]
 
 
 async def _run_analysis_background(scope: str) -> None:

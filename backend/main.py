@@ -10,6 +10,8 @@ from routers.agents import router as agents_router
 from routers.decisions import router as decisions_router
 from routers.employees import router as employees_router
 from routers.health import router as health_router
+from routers.monthly_meeting import router as monthly_meeting_router
+from routers.reports import router as reports_router
 from routers.stream import router as stream_router
 from services.database import EmployeeORM, get_db, init_db
 from services.logger import logger
@@ -56,6 +58,8 @@ app.include_router(employees_router, prefix="/api")
 app.include_router(agents_router, prefix="/api")
 app.include_router(decisions_router, prefix="/api")
 app.include_router(stream_router, prefix="/api")
+app.include_router(reports_router, prefix="/api")
+app.include_router(monthly_meeting_router, prefix="/api")
 
 logger.info("绩效管理 Agent 服务启动")
 

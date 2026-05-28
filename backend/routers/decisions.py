@@ -67,8 +67,24 @@ async def _broadcast_decision_updated(decision: Decision) -> None:
 
 
 async def _run_execution_background(decision_id: str) -> None:
-    """后台触发执行 Agent（占位，后续实现）"""
-    logger.info(f"执行 Agent 触发 [decision_id={decision_id}]（占位）")
+    """后台触发执行 Agent，执行审批通过的决策"""
+    from agents.execution_agent import execution_agent
+    async with AsyncSessionLocal() as db:
+        try:
+            result = await db.execute(
+                select(DecisionORM).where(DecisionORM.id == decision_id)
+            )
+            orm = result.scalar_one_or_none()
+            if orm is None:
+                logger.warning(f"执行 Agent：决策 {decision_id} 不存在")
+                return
+            decision = _orm_to_decision(orm)
+            exec_result = await execution_agent.execute_decision(decision, db)
+            orm.execution_result = exec_result
+            await db.commit()
+            logger.info(f"执行 Agent 完成 [{decision_id}]: {exec_result}")
+        except Exception as e:
+            logger.error(f"执行 Agent 后台任务失败 [{decision_id}]: {e}")
 
 
 @router.get("/decisions/pending", response_model=DecisionListResponse)
