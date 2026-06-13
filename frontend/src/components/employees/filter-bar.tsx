@@ -46,6 +46,7 @@ export function FilterBar({ values, onChange }: FilterBarProps) {
           onChange={(e) => onChange({ ...values, department: e.target.value })}
           className={selectClass}
           aria-label="按部门筛选"
+          data-testid="department-filter"
         >
           {DEPARTMENTS.map((d) => (
             <option key={d.value} value={d.value}>{d.label}</option>
@@ -76,6 +77,7 @@ export function FilterBar({ values, onChange }: FilterBarProps) {
           onChange={(e) => onChange({ ...values, search: e.target.value })}
           className="h-9 pl-8 pr-3 text-sm bg-white border border-slate-200 rounded-lg text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-48"
           aria-label="按姓名搜索"
+          data-testid="search-input"
         />
         <span className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm">⌕</span>
       </div>

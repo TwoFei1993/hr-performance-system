@@ -13,9 +13,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 shadow-sm',
+    'bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800 shadow-sm',
   secondary:
-    'bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 active:bg-slate-100',
+    'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 active:bg-slate-100',
   danger:
     'bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm',
   ghost:
@@ -23,7 +23,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 }
 
 const sizeClasses: Record<'sm' | 'md' | 'lg', string> = {
-  sm: 'px-3 py-1.5 text-xs rounded-md',
+  sm: 'px-3 py-1.5 text-xs rounded-lg',
   md: 'px-4 py-2 text-sm rounded-lg',
   lg: 'px-6 py-2.5 text-base rounded-lg',
 }
@@ -41,9 +41,10 @@ export function Button({
     <button
       disabled={disabled ?? loading}
       className={cn(
-        'inline-flex items-center justify-center gap-2 font-medium transition-colors',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2',
-        'disabled:opacity-50 disabled:cursor-not-allowed',
+        'inline-flex items-center justify-center gap-2 font-medium',
+        'transition-all duration-150 active:scale-95',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2',
+        'disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100',
         variantClasses[variant],
         sizeClasses[size],
         className,

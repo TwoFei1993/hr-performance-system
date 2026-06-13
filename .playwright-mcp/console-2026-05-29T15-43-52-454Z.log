@@ -1,0 +1,7 @@
+[     155ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[  196324ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  197188ms] [LOG] [Fast Refresh] done in 973ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  197295ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  197341ms] [LOG] [Fast Refresh] done in 147ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  197751ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  197824ms] [LOG] [Fast Refresh] done in 187ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376

@@ -1,0 +1,32 @@
+[     186ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[  313186ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  313844ms] [LOG] [Fast Refresh] done in 759ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  433302ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  433312ms] [ERROR] ./src/app/agents/page.tsx:5:1
+Export AgentNetworkDiagram doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { AgentCard } from '@/components/agents/agent-card'
+> 5 | import { AgentNetworkDiagram } from '@/components/agents/agent-network-diagram'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { PageLoading } from '@/components/ui/loading'
+  7 | import { fetchAgentStatus, triggerAgent } from '@/lib/api'
+  8 | import type { AgentStatusInfo, AgentName, AgentStatus } from '@/types'
+
+The export AgentNetworkDiagram was not found in module [project]/src/components/agents/agent-network-diagram.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[  433313ms] [ERROR] ./src/app/agents/page.tsx:5:1
+Export AgentNetworkDiagram doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { AgentCard } from '@/components/agents/agent-card'
+> 5 | import { AgentNetworkDiagram } from '@/components/agents/agent-network-diagram'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { PageLoading } from '@/components/ui/loading'
+  7 | import { fetchAgentStatus, triggerAgent } from '@/lib/api'
+  8 | import type { AgentStatusInfo, AgentName, AgentStatus } from '@/types'
+
+The export AgentNetworkDiagram was not found in module [project]/src/components/agents/agent-network-diagram.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[  483657ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  483883ms] [LOG] [Fast Refresh] done in 212ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376

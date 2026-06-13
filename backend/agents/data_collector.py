@@ -15,11 +15,16 @@ from models.employee import (
 )
 from services.database import AsyncSessionLocal, EmployeeORM, init_db
 
-# 百家姓和常用名
+# 百家姓和常用名 — 扩大池子减少重名
 SURNAMES = ['王', '李', '张', '刘', '陈', '杨', '赵', '黄', '周', '吴',
-            '徐', '孙', '胡', '朱', '高', '林', '何', '郭', '马', '罗']
+            '徐', '孙', '胡', '朱', '高', '林', '何', '郭', '马', '罗',
+            '梁', '宋', '郑', '谢', '韩', '唐', '冯', '于', '董', '萧',
+            '程', '曹', '袁', '邓', '许', '傅', '沈', '曾', '彭', '吕']
 GIVEN_NAMES = ['伟', '芳', '娜', '秀英', '敏', '静', '丽', '强', '磊', '军',
-               '洋', '勇', '艳', '杰', '娟', '涛', '明', '超', '秀兰', '霞']
+               '洋', '勇', '艳', '杰', '娟', '涛', '明', '超', '秀兰', '霞',
+               '鹏', '婷', '欣', '浩', '宇', '晨', '雪', '峰', '帆', '琳',
+               '博', '颖', '昊', '莹', '翔', '燕', '辉', '萍', '健', '慧',
+               '志远', '思远', '建国', '晓明', '文博', '雨桐', '嘉豪', '梦琪']
 
 # 部门配置：(部门名, 人数, 可用级别列表)
 DEPT_CONFIG: list[tuple[str, int, list[str]]] = [
@@ -81,21 +86,46 @@ def _random_hire_date() -> str:
     return (start + timedelta(days=random.randint(0, delta))).strftime('%Y-%m-%d')
 
 
-def _generate_employee(emp_id: str, dept: str, levels: list[str]) -> EmployeeRecord:
+def _generate_employee(
+    emp_id: str, dept: str, levels: list[str],
+    forced_composite: float | None = None,
+    forced_trend: Trend | None = None,
+) -> EmployeeRecord:
     name = random.choice(SURNAMES) + random.choice(GIVEN_NAMES)
     level = random.choice(levels)
     manager = random.choice(MANAGER_NAMES)
     hire_date = _random_hire_date()
 
-    okr = _random_score()
-    r360 = _random_score()
-    biz = _random_score()
-    att = _random_score(mean=85, std=10)
-    composite = _calc_composite(okr, r360, biz, att)
+    if forced_composite is not None:
+        composite = forced_composite
+        # 反推各维度分数，使加权后接近 forced_composite
+        okr = _clamp(composite + random.uniform(-8, 8))
+        r360 = _clamp(composite + random.uniform(-8, 8))
+        biz = _clamp(composite + random.uniform(-8, 8))
+        att = _clamp(composite + random.uniform(-5, 5))
+        # 重新精确计算 composite
+        composite = _calc_composite(okr, r360, biz, att)
+    else:
+        okr = _random_score()
+        r360 = _random_score()
+        biz = _random_score()
+        att = _random_score(mean=85, std=10)
+        composite = _calc_composite(okr, r360, biz, att)
 
     # 近6个月历史：基于当前分数 ±10 随机波动
-    history = [_clamp(composite + random.uniform(-10, 10)) for _ in range(6)]
-    trend = _calc_trend(history)
+    if forced_trend == 'down':
+        # 构造下降趋势：前3月高，后3月低
+        base_high = composite + random.uniform(8, 15)
+        base_low = composite - random.uniform(2, 5)
+        history = [
+            _clamp(base_high + random.uniform(-3, 3)) for _ in range(3)
+        ] + [
+            _clamp(base_low + random.uniform(-3, 3)) for _ in range(3)
+        ]
+    else:
+        history = [_clamp(composite + random.uniform(-10, 10)) for _ in range(6)]
+
+    trend = forced_trend if forced_trend else _calc_trend(history)
     rec, reason, confidence = _calc_recommendation(composite, level, trend)
 
     return EmployeeRecord(
@@ -119,15 +149,42 @@ def _generate_employee(emp_id: str, dept: str, levels: list[str]) -> EmployeeRec
     )
 
 
+# 120人分配：12 promote / 30 salary_raise / 12 pip / 18 one_on_one / 48 normal
+_SCORE_SLOTS: list[tuple[float | None, Trend | None]] = (
+    [(random.uniform(88, 95), None)] * 12          # promote
+    + [(random.uniform(80, 87), None)] * 30        # salary_raise
+    + [(random.uniform(35, 44), None)] * 12        # pip
+    + [(random.uniform(45, 55), 'down')] * 18      # one_on_one
+    + [(None, None)] * 48                          # normal (56-79 via gauss)
+)
+
+
 def generate_mock_employees() -> list[EmployeeRecord]:
-    """生成120名员工的 Mock 数据"""
+    """生成120名员工的 Mock 数据。
+    固定种子 42 保证每次重置数据完全一致，全站所有页面数据匹配。"""
+    random.seed(42)
+    slots: list[tuple[float | None, Trend | None]] = (
+        [(random.uniform(88, 95), None)] * 12
+        + [(random.uniform(80, 87), None)] * 30
+        + [(random.uniform(35, 44), None)] * 12
+        + [(random.uniform(45, 55), 'down')] * 18
+        + [(None, None)] * 48
+    )
+    random.shuffle(slots)
+
     employees: list[EmployeeRecord] = []
     counter = 1
+    dept_pool: list[tuple[str, list[str]]] = []
     for dept, count, levels in DEPT_CONFIG:
-        for _ in range(count):
-            emp_id = f"EMP{counter:04d}"
-            employees.append(_generate_employee(emp_id, dept, levels))
-            counter += 1
+        dept_pool.extend([(dept, levels)] * count)
+
+    for i, (dept, levels) in enumerate(dept_pool):
+        emp_id = f"EMP{counter:04d}"
+        forced_composite, forced_trend = slots[i]
+        employees.append(
+            _generate_employee(emp_id, dept, levels, forced_composite, forced_trend)
+        )
+        counter += 1
     return employees
 
 

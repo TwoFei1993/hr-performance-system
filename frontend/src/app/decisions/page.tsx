@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect, useState, useCallback } from 'react'
-import { DecisionCard } from '@/components/decisions/decision-card'
+import { DecisionStatsBar } from '@/components/decisions/decision-stats-bar'
+import { GroupedPendingList } from '@/components/decisions/grouped-pending-list'
+import { HistoryTable } from '@/components/decisions/history-table'
 import { Badge } from '@/components/ui/badge'
 import { PageLoading } from '@/components/ui/loading'
 import {
@@ -11,39 +13,9 @@ import {
   rejectDecision,
   deferDecision,
 } from '@/lib/api'
-import type { Decision, DecisionType, DecisionStatus } from '@/types'
+import type { Decision } from '@/types'
 
 type Tab = 'pending' | 'history'
-
-const TYPE_LABEL: Record<DecisionType, string> = {
-  promote: '升职',
-  salary_raise: '调薪',
-  pip: 'PIP',
-  one_on_one: '1:1',
-}
-
-const STATUS_LABEL: Record<DecisionStatus, string> = {
-  pending: '待审批',
-  approved: '已确认',
-  rejected: '已驳回',
-  deferred: '已暂缓',
-}
-
-type BadgeVariant = 'default' | 'success' | 'danger' | 'warning'
-
-const STATUS_VARIANT: Record<DecisionStatus, BadgeVariant> = {
-  pending: 'default',
-  approved: 'success',
-  rejected: 'danger',
-  deferred: 'warning',
-}
-
-function formatDate(iso?: string): string {
-  if (!iso) return '—'
-  try {
-    return new Date(iso).toLocaleString('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
-  } catch { return iso }
-}
 
 export default function DecisionsPage() {
   const [tab, setTab] = useState<Tab>('pending')
@@ -103,10 +75,11 @@ export default function DecisionsPage() {
   }, [loadPending])
 
   return (
-    <div className="p-6 space-y-5 max-w-screen-xl">
+    <div className="p-6 space-y-6 max-w-screen-xl">
+      {/* 页头 */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-bold text-slate-900">决策审批</h1>
+          <h1 className="text-xl font-bold text-slate-900 font-display">决策审批</h1>
           <p className="text-sm text-slate-500 mt-0.5">AI 辅助决策，人工最终确认</p>
         </div>
         {pending.length > 0 && (
@@ -114,6 +87,12 @@ export default function DecisionsPage() {
         )}
       </div>
 
+      {/* 统计栏 */}
+      {!loadingPending && (
+        <DecisionStatsBar pending={pending} history={history} />
+      )}
+
+      {/* 错误提示 */}
       {error && (
         <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
           {error}
@@ -127,7 +106,9 @@ export default function DecisionsPage() {
             key={t}
             onClick={() => setTab(t)}
             className={`px-4 py-1.5 text-sm rounded-md font-medium transition-colors ${
-              tab === t ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+              tab === t
+                ? 'bg-white text-slate-900 shadow-sm'
+                : 'text-slate-500 hover:text-slate-700'
             }`}
           >
             {t === 'pending' ? `待审批 (${pending.length})` : '已处理'}
@@ -135,6 +116,7 @@ export default function DecisionsPage() {
         ))}
       </div>
 
+      {/* 待审批 */}
       {tab === 'pending' && (
         loadingPending ? <PageLoading /> : (
           pending.length === 0 ? (
@@ -143,51 +125,21 @@ export default function DecisionsPage() {
               <p className="text-sm">暂无待审批决策</p>
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-4">
-              {pending.map((d) => (
-                <DecisionCard
-                  key={d.id}
-                  decision={d}
-                  onApprove={handleApprove}
-                  onReject={handleReject}
-                  onDefer={handleDefer}
-                  processing={processing === d.id}
-                />
-              ))}
-            </div>
+            <GroupedPendingList
+              decisions={pending}
+              onApprove={handleApprove}
+              onReject={handleReject}
+              onDefer={handleDefer}
+              processing={processing}
+            />
           )
         )
       )}
 
+      {/* 已处理 */}
       {tab === 'history' && (
         loadingHistory ? <PageLoading /> : (
-          <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-100">
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">员工</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">类型</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">处理时间</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">结果</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-50">
-                {history.map((d) => (
-                  <tr key={d.id} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-4 py-3 font-medium text-slate-900">{d.employeeName}</td>
-                    <td className="px-4 py-3 text-slate-600">{TYPE_LABEL[d.type]}</td>
-                    <td className="px-4 py-3 text-slate-500 tabular-nums">{formatDate(d.resolvedAt)}</td>
-                    <td className="px-4 py-3">
-                      <Badge variant={STATUS_VARIANT[d.status]}>{STATUS_LABEL[d.status]}</Badge>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            {history.length === 0 && (
-              <div className="text-center py-12 text-slate-400 text-sm">暂无处理记录</div>
-            )}
-          </div>
+          <HistoryTable history={history} />
         )
       )}
     </div>

@@ -1,0 +1,32 @@
+[     391ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[  173358ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  173359ms] [LOG] [Fast Refresh] done in 102ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  184251ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  186131ms] [LOG] [Fast Refresh] done in 1982ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  186243ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  186458ms] [LOG] [Fast Refresh] done in 317ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  606470ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  606510ms] [LOG] [Fast Refresh] done in 17ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  629788ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  629827ms] [LOG] [Fast Refresh] done in 75ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  734702ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  734740ms] [LOG] [Fast Refresh] done in 59ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  742880ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  742895ms] [LOG] [Fast Refresh] done in 79ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  752658ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  753024ms] [LOG] [Fast Refresh] done in 425ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  753731ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[  753825ms] [LOG] [Fast Refresh] done in NaNms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  760734ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[  760771ms] [LOG] [Fast Refresh] done in 95ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 1201648ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 1201661ms] [LOG] [Fast Refresh] done in 115ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 1201773ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 1202428ms] [LOG] [Fast Refresh] done in 757ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 1202537ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 1202599ms] [LOG] [Fast Refresh] done in 162ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 1202710ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 1203329ms] [LOG] [Fast Refresh] done in 720ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 1205386ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 1205573ms] [LOG] [Fast Refresh] done in 288ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 1246179ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/agents/status:0

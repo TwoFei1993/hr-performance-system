@@ -1,0 +1,18 @@
+
+> frontend@0.1.0 dev C:\Users\shaoy\Desktop\通威\绩效管理agent\frontend
+> next dev --turbopack "--port" "3004"
+
+   ▲ Next.js 15.4.0 (Turbopack)
+   - Local:        http://localhost:3004
+   - Network:      http://198.18.0.1:3004
+
+ ✓ Starting...
+ ✓ Ready in 860ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.6s
+ GET / 200 in 3277ms
+ GET / 200 in 227ms
+(node:17724) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ✓ Compiled in 64ms
+[?25h

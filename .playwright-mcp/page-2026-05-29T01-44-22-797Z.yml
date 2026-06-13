@@ -1,0 +1,37 @@
+- generic [active] [ref=e1]:
+  - complementary "主导航" [ref=e2]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 通威集团
+        - paragraph [ref=e10]: 绩效管理平台
+    - navigation [ref=e11]:
+      - link "主控台" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+        - text: 主控台
+      - link "员工绩效" [ref=e18] [cursor=pointer]:
+        - /url: /employees
+        - img [ref=e19]
+        - text: 员工绩效
+      - link "Agent 状态" [ref=e24] [cursor=pointer]:
+        - /url: /agents
+        - img [ref=e25]
+        - text: Agent 状态
+      - link "决策审批" [ref=e28] [cursor=pointer]:
+        - /url: /decisions
+        - img [ref=e29]
+        - text: 决策审批
+      - link "月会管理" [ref=e32] [cursor=pointer]:
+        - /url: /monthly-meeting
+        - img [ref=e33]
+        - text: 月会管理
+      - link "HR 系统" [ref=e35] [cursor=pointer]:
+        - /url: /hr-system
+        - img [ref=e36]
+        - text: HR 系统
+    - generic [ref=e40]:
+      - paragraph [ref=e41]: 绩效管理 Agent
+      - paragraph [ref=e42]: v1.0.0
+  - main [ref=e43]:
+    - status "加载中..." [ref=e45]: 加载中...

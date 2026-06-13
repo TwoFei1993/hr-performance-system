@@ -18,6 +18,16 @@ _last_run_at: str | None = None
 _run_count: int = 0
 _last_error: str | None = None
 
+
+def reset_state() -> None:
+    """重置执行 Agent 的进程内状态（一键复位用）"""
+    global _agent_status, _last_run_at, _run_count, _last_error
+    _agent_status = 'idle'
+    _last_run_at = None
+    _run_count = 0
+    _last_error = None
+
+
 LEVEL_ORDER = ['P4', 'P5', 'P6', 'P7', 'P8', 'P9']
 
 

@@ -1,10 +1,8 @@
 import { Badge } from '@/components/ui/badge'
-import type { Recommendation } from '@/types'
+import type { EmployeeRecord, Recommendation } from '@/types'
 
 interface AiReportProps {
-  recommendation: Recommendation
-  reason: string
-  confidence: number
+  employee: EmployeeRecord
   isAiDegraded?: boolean
 }
 
@@ -32,8 +30,15 @@ function confidenceColor(c: number): string {
   return 'bg-red-400'
 }
 
-export function AiReport({ recommendation, reason, confidence, isAiDegraded }: AiReportProps) {
+export function AiReport({ employee, isAiDegraded }: AiReportProps) {
+  const { recommendation, recommendationReason, confidence } = employee
+  const { okrScore, reviewScore360, businessScore, attendanceScore, compositeScore } = employee
   const pct = Math.round(confidence * 100)
+
+  const okrContrib = (okrScore * 0.3).toFixed(1)
+  const reviewContrib = (reviewScore360 * 0.25).toFixed(1)
+  const bizContrib = (businessScore * 0.3).toFixed(1)
+  const attContrib = (attendanceScore * 0.15).toFixed(1)
 
   return (
     <div className="space-y-4">
@@ -52,8 +57,27 @@ export function AiReport({ recommendation, reason, confidence, isAiDegraded }: A
       <div>
         <p className="text-xs font-medium text-slate-500 mb-1.5">建议理由</p>
         <p className="text-sm text-slate-700 leading-relaxed bg-slate-50 rounded-lg px-4 py-3 border border-slate-100">
-          {reason}
+          {recommendationReason}
         </p>
+      </div>
+
+      {/* 得分计算公式 */}
+      <div>
+        <p className="text-xs font-medium text-slate-500 mb-1.5">综合得分计算公式</p>
+        <div className="bg-slate-50 rounded-lg px-4 py-3 border border-slate-100 space-y-1.5 overflow-x-auto">
+          <p className="text-xs text-slate-500 font-mono whitespace-nowrap">
+            OKR完成率 × 30% + 360评估 × 25% + 业务指标 × 30% + 出勤履职 × 15%
+          </p>
+          <p className="text-xs text-slate-600 font-mono whitespace-nowrap">
+            = {okrScore} × 0.30 + {reviewScore360} × 0.25 + {businessScore} × 0.30 + {attendanceScore} × 0.15
+          </p>
+          <p className="text-xs text-slate-600 font-mono whitespace-nowrap">
+            = {okrContrib} + {reviewContrib} + {bizContrib} + {attContrib}
+          </p>
+          <p className="text-sm font-bold text-blue-700 font-mono border-t border-slate-200 pt-1.5">
+            = {compositeScore.toFixed(1)} 分
+          </p>
+        </div>
       </div>
 
       <div>

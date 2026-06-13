@@ -1,0 +1,39 @@
+[     300ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[     492ms] TypeError: Cannot read properties of undefined (reading 'map')
+    at PerformanceChart (http://localhost:3004/_next/static/chunks/src_232fc784._.js:334:48)
+    at react-stack-bottom-frame (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:15119:24)
+    at renderWithHooks (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:6246:24)
+    at updateFunctionComponent (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:7609:21)
+    at beginWork (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:8203:24)
+    at runWithFiberInDEV (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:3081:74)
+    at performUnitOfWork (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10404:97)
+    at workLoopSync (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10296:40)
+    at renderRootSync (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10279:13)
+    at performWorkOnRoot (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10038:56)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10988:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:1982:64)
+[     505ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[    1078ms] [LOG] [Fast Refresh] done in 688ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[   66564ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[   66583ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15843
+[   66598ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15843
+[   66647ms] [LOG] [Fast Refresh] done in 138ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[   67164ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[   67250ms] TypeError: Cannot convert undefined or null to object
+    at Object.entries (<anonymous>)
+    at DepartmentRadar (http://localhost:3004/_next/static/chunks/src_232fc784._.js:436:30)
+    at react-stack-bottom-frame (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:15119:24)
+    at renderWithHooks (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:6246:24)
+    at updateFunctionComponent (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:7609:21)
+    at beginWork (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:8203:24)
+    at runWithFiberInDEV (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:3081:74)
+    at performUnitOfWork (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10404:97)
+    at workLoopSync (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10296:40)
+    at renderRootSync (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10279:13)
+    at performWorkOnRoot (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10038:56)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10988:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:1982:64)
+[   84657ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[   84658ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15843
+[   84702ms] [LOG] [Fast Refresh] done in 77ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[   85164ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591

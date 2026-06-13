@@ -1,0 +1,18 @@
+[     258ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[     297ms] [ERROR] Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `AgentsPage`.  @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:773
+[   82422ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[   82464ms] [LOG] [Fast Refresh] done in 34ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[   90747ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[   90783ms] [LOG] [Fast Refresh] done in 33ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[   99472ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[   99502ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[  107728ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[  107774ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[  119113ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[  119161ms] [LOG] [Fast Refresh] done in 28ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[  129237ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[  129268ms] [LOG] [Fast Refresh] done in 33ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[  140680ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[  140713ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376

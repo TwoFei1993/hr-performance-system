@@ -51,6 +51,15 @@ export interface AgentStatusInfo {
   runCount: number
 }
 
+export interface Scores6D {
+  job_fit: number
+  innovation: number
+  execution: number
+  teamwork: number
+  growth: number
+  contribution: number
+}
+
 export interface DashboardStats {
   totalEmployees: number
   pendingPromote: number
@@ -58,6 +67,7 @@ export interface DashboardStats {
   pendingPip: number
   pendingOneOnOne: number
   departmentScores: Record<Department, number>
+  department6dScores?: Record<string, Record<string, number>>
   scoreDistribution: Array<{ range: string; count: number }>
 }
 

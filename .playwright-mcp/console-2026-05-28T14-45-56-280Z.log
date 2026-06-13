@@ -1,0 +1,6 @@
+[     352ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[  137734ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[  137768ms] [LOG] [Fast Refresh] done in 79ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[  213982ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=a9369dfe-1c43-496b-ae2c-c85bb289716a:0
+[  219321ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=a9369dfe-1c43-496b-ae2c-c85bb289716a:0
+[  224668ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=a9369dfe-1c43-496b-ae2c-c85bb289716a:0

@@ -2,9 +2,10 @@
 
 import { useEffect, useState, useCallback } from 'react'
 import { AgentCard } from '@/components/agents/agent-card'
+import { AgentNetworkDiagram } from '@/components/agents/agent-network-diagram'
 import { PageLoading } from '@/components/ui/loading'
 import { fetchAgentStatus, triggerAgent } from '@/lib/api'
-import type { AgentStatusInfo, AgentName } from '@/types'
+import type { AgentStatusInfo, AgentName, AgentStatus } from '@/types'
 
 export default function AgentsPage() {
   const [agents, setAgents] = useState<AgentStatusInfo[]>([])
@@ -33,17 +34,21 @@ export default function AgentsPage() {
   const handleTrigger = useCallback(async (agentName: AgentName) => {
     setTriggering(agentName)
     try {
-      await triggerAgent(agentName, 'all')
-      // 3秒后刷新状态
+      await triggerAgent(agentName, 'daily')
+      await load()
       setTimeout(() => {
         void load()
         setTriggering(null)
-      }, 3000)
+      }, 5000)
     } catch (err) {
       setError(err instanceof Error ? err.message : '触发失败')
       setTriggering(null)
     }
   }, [load])
+
+  const agentStatuses = Object.fromEntries(
+    agents.map(a => [a.agentName, a.status])
+  ) as Partial<Record<AgentName, AgentStatus>>
 
   if (loading && agents.length === 0) return <PageLoading />
 
@@ -51,7 +56,7 @@ export default function AgentsPage() {
     <div className="p-6 space-y-5 max-w-screen-xl">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-bold text-slate-900">Agent 运行状态</h1>
+          <h1 className="text-xl font-bold text-slate-900 font-display">Agent 运行状态</h1>
           <p className="text-sm text-slate-500 mt-0.5">每10秒自动刷新</p>
         </div>
         <div className="flex items-center gap-2">
@@ -60,6 +65,9 @@ export default function AgentsPage() {
         </div>
       </div>
 
+      {/* 多智能体协作示意图 */}
+      <AgentNetworkDiagram agentStatuses={agentStatuses} />
+
       {error && (
         <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
           {error}
@@ -67,13 +75,19 @@ export default function AgentsPage() {
       )}
 
       <div className="grid grid-cols-2 gap-4">
-        {agents.map((agent) => (
-          <AgentCard
+        {agents.map((agent, idx) => (
+          <div
             key={agent.agentName}
-            agent={agent}
-            onTrigger={handleTrigger}
-            triggering={triggering === agent.agentName}
-          />
+            data-testid={`agent-card-${agent.agentName}`}
+            className="animate-fade-in-up"
+            style={{ animationDelay: `${idx * 80}ms` }}
+          >
+            <AgentCard
+              agent={agent}
+              onTrigger={handleTrigger}
+              triggering={triggering === agent.agentName}
+            />
+          </div>
         ))}
       </div>
 

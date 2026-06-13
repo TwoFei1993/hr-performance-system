@@ -1,0 +1,45 @@
+- generic [active] [ref=e1]:
+  - complementary "主导航" [ref=e2]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 通威集团
+        - paragraph [ref=e10]: 绩效管理平台
+    - navigation [ref=e11]:
+      - link "主控台" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+        - generic [ref=e18]: 主控台
+      - link "员工绩效" [ref=e19] [cursor=pointer]:
+        - /url: /employees
+        - img [ref=e20]
+        - generic [ref=e25]: 员工绩效
+      - link "Agent 状态" [ref=e26] [cursor=pointer]:
+        - /url: /agents
+        - img [ref=e27]
+        - generic [ref=e30]: Agent 状态
+      - link "决策审批" [ref=e31] [cursor=pointer]:
+        - /url: /decisions
+        - img [ref=e32]
+        - generic [ref=e35]: 决策审批
+      - link "月会管理" [ref=e36] [cursor=pointer]:
+        - /url: /monthly-meeting
+        - img [ref=e37]
+        - generic [ref=e39]: 月会管理
+      - link "HR 系统" [ref=e40] [cursor=pointer]:
+        - /url: /hr-system
+        - img [ref=e41]
+        - generic [ref=e45]: HR 系统
+    - generic [ref=e46]:
+      - paragraph [ref=e47]: 绩效管理 Agent
+      - paragraph [ref=e48]: v1.0.0
+  - main [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e52]:
+        - heading "决策审批" [level=1] [ref=e53]
+        - paragraph [ref=e54]: AI 辅助决策，人工最终确认
+      - generic [ref=e55]:
+        - button "待审批 (0)" [ref=e56]
+        - button "已处理" [ref=e57]
+      - status "加载中..." [ref=e59]:
+        - generic [ref=e61]: 加载中...

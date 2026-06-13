@@ -66,7 +66,7 @@ export default function EmployeesPage() {
     <div className="p-6 space-y-5 max-w-screen-xl">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-bold text-slate-900">员工绩效总览</h1>
+          <h1 className="text-xl font-bold text-slate-900 font-display">员工绩效总览</h1>
           <p className="text-sm text-slate-500 mt-0.5">共 {total} 名员工</p>
         </div>
       </div>

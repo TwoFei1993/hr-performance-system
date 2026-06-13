@@ -1,0 +1,13 @@
+[     247ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[     359ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/api/dashboard/stats:0
+[     369ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/api/decisions/pending?page=1&size=50:0
+[     454ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/api/stream/notifications?client_id=e7fdc107-2942-45c1-b135-a8e019d04c32:0
+[     628ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[    1107ms] [LOG] [Fast Refresh] done in 587ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[    1325ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[    1717ms] [LOG] [Fast Refresh] done in 505ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[    3480ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/api/stream/notifications?client_id=e7fdc107-2942-45c1-b135-a8e019d04c32:0
+[    6500ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/api/stream/notifications?client_id=e7fdc107-2942-45c1-b135-a8e019d04c32:0
+[    9511ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/api/stream/notifications?client_id=e7fdc107-2942-45c1-b135-a8e019d04c32:0
+[   12536ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/api/stream/notifications?client_id=e7fdc107-2942-45c1-b135-a8e019d04c32:0
+[   15549ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/api/stream/notifications?client_id=e7fdc107-2942-45c1-b135-a8e019d04c32:0

@@ -22,6 +22,15 @@ _last_run_result: str | None = None
 _run_count: int = 0
 
 
+def reset_state() -> None:
+    """重置分析 Agent 的进程内状态（一键复位用）"""
+    global _agent_status, _last_run_at, _last_run_result, _run_count
+    _agent_status = 'idle'
+    _last_run_at = None
+    _last_run_result = None
+    _run_count = 0
+
+
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 

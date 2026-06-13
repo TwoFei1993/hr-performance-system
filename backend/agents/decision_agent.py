@@ -1,4 +1,5 @@
 """辅助决策 Agent：从员工数据生成决策，支持会议议程生成"""
+import hashlib as _hashlib
 import json
 import uuid
 from datetime import datetime, timezone
@@ -19,6 +20,16 @@ _last_run_at: str | None = None
 _last_run_result: str | None = None
 _run_count: int = 0
 
+
+def reset_state() -> None:
+    """重置决策 Agent 的进程内状态（一键复位用）"""
+    global _agent_status, _last_run_at, _last_run_result, _run_count
+    _agent_status = 'idle'
+    _last_run_at = None
+    _last_run_result = None
+    _run_count = 0
+
+
 # recommendation -> DecisionType 映射（normal 不生成决策）
 _REC_TO_DECISION: dict[str, DecisionType] = {
     'promote': 'promote',
@@ -26,6 +37,36 @@ _REC_TO_DECISION: dict[str, DecisionType] = {
     'pip': 'pip',
     'one_on_one': 'one_on_one',
 }
+
+
+def _pick_reason(emp_id: str, rec_type: str, emp) -> str:
+    """根据员工数据和推荐类型生成多样化的决策理由"""
+    idx = int(_hashlib.md5(emp_id.encode()).hexdigest()[:4], 16)
+    reasons = {
+        'salary_raise': [
+            f"连续3个月OKR完成率{emp.okr_score:.0f}%，业务指标稳定，建议调薪10%",
+            f"360评估{emp.review_score_360:.0f}分，团队反馈优秀，薪资低于市场中位数",
+            f"综合绩效{emp.composite_score:.1f}分，近期承担额外项目，建议薪资激励",
+            f"业务指标完成度{emp.business_score:.0f}%，超额完成季度目标，建议调薪",
+        ],
+        'promote': [
+            f"综合评分{emp.composite_score:.1f}，已在{emp.level}工作18个月，具备晋升条件",
+            f"OKR完成率{emp.okr_score:.0f}%，领导力评估优秀，建议晋升至下一职级",
+            f"业务贡献突出，360评估{emp.review_score_360:.0f}分，团队认可度高",
+        ],
+        'pip': [
+            f"综合评分{emp.composite_score:.1f}，连续2季度未达标，需制定90天改进计划",
+            f"OKR完成率仅{emp.okr_score:.0f}%，出勤履职{emp.attendance_score:.0f}分，需重点关注",
+            f"业务指标{emp.business_score:.0f}%，低于部门平均水平，建议安排导师辅导",
+        ],
+        'one_on_one': [
+            f"绩效趋势持续下滑，综合分{emp.composite_score:.1f}，建议直属上级深度沟通",
+            f"近3个月OKR完成率{emp.okr_score:.0f}%，可能存在工作障碍，需1:1了解情况",
+            f"360评估{emp.review_score_360:.0f}分，团队协作出现问题，建议及时沟通",
+        ],
+    }
+    pool = reasons.get(rec_type, [f"综合评分{emp.composite_score:.1f}，建议关注"])
+    return pool[idx % len(pool)]
 
 
 def _now_iso() -> str:
@@ -91,6 +132,7 @@ class DecisionAgent:
 
                 decision_id = str(uuid.uuid4())
                 now = _now_iso()
+                reason = _pick_reason(emp.id, decision_type, emp)
                 orm = DecisionORM(
                     id=decision_id,
                     employee_id=emp.id,
@@ -98,7 +140,7 @@ class DecisionAgent:
                     department=emp.department,
                     type=decision_type,
                     status='pending',
-                    reason=emp.recommendation_reason,
+                    reason=reason,
                     confidence=emp.confidence,
                     created_at=now,
                 )
@@ -110,7 +152,7 @@ class DecisionAgent:
                     department=emp.department,  # type: ignore[arg-type]
                     type=decision_type,
                     status='pending',
-                    reason=emp.recommendation_reason,
+                    reason=reason,
                     confidence=emp.confidence,
                     created_at=now,
                 )

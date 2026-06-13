@@ -1,0 +1,4 @@
+[     126ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[     179ms] [LOG] [Fast Refresh] done in 165ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[     259ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[     473ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0

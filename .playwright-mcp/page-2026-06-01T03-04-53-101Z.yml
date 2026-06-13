@@ -1,0 +1,188 @@
+- generic [active] [ref=e1]:
+  - complementary "主导航" [ref=e2]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 通威集团
+        - paragraph [ref=e10]: 绩效管理平台
+    - navigation [ref=e11]:
+      - link "主控台" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+        - generic [ref=e18]: 主控台
+      - link "员工绩效" [ref=e19] [cursor=pointer]:
+        - /url: /employees
+        - img [ref=e20]
+        - generic [ref=e25]: 员工绩效
+      - link "Agent 状态" [ref=e26] [cursor=pointer]:
+        - /url: /agents
+        - img [ref=e27]
+        - generic [ref=e30]: Agent 状态
+      - link "决策审批" [ref=e31] [cursor=pointer]:
+        - /url: /decisions
+        - img [ref=e32]
+        - generic [ref=e35]: 决策审批
+      - link "月会管理" [ref=e36] [cursor=pointer]:
+        - /url: /monthly-meeting
+        - img [ref=e37]
+        - generic [ref=e39]: 月会管理
+      - link "HR 系统" [ref=e40] [cursor=pointer]:
+        - /url: /hr-system
+        - img [ref=e41]
+        - generic [ref=e45]: HR 系统
+    - paragraph [ref=e49]: 系统运行中 · v1.0.0
+  - main [ref=e50]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - heading "Agent 运行状态" [level=1] [ref=e63]
+          - paragraph [ref=e64]: 每10秒自动刷新
+        - generic [ref=e67]: 实时监控
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - heading "多智能体协作架构" [level=2] [ref=e70]
+          - generic [ref=e71]: 点击 Agent 查看内部 Skill
+        - img "Agent 协作示意图" [ref=e72]:
+          - generic [ref=e77]:
+            - generic [ref=e80]: 🏢
+            - generic [ref=e81]: 绩效管理
+            - generic [ref=e82]: 系统
+          - button "数据采集 Agent，点击展开" [ref=e83] [cursor=pointer]:
+            - generic [ref=e86]: 📋
+            - generic [ref=e87]: 数据采集
+          - button "分析 Agent，点击展开" [ref=e88] [cursor=pointer]:
+            - generic [ref=e91]: 🔬
+            - generic [ref=e92]: 分析
+          - button "辅助决策 Agent，点击展开" [ref=e93] [cursor=pointer]:
+            - generic [ref=e96]: ⚖️
+            - generic [ref=e97]: 辅助决策
+          - button "执行 Agent，点击展开" [ref=e98] [cursor=pointer]:
+            - generic [ref=e102]: ⚡
+            - generic [ref=e103]: 执行
+        - generic [ref=e217]:
+          - generic [ref=e218]:
+            - generic [ref=e219]: 🔬
+            - generic [ref=e220]: 分析 Agent
+            - generic [ref=e221]: — 内部 Skill 流程
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - generic [ref=e224]:
+                - generic [ref=e225]: 🔢
+                - generic [ref=e226]:
+                  - paragraph [ref=e227]: 权重计算
+                  - paragraph [ref=e228]: OKR 30% + 360 25% + 业务 30% + 出勤 15%
+              - generic:
+                - img
+            - generic [ref=e229]:
+              - generic [ref=e230]:
+                - generic [ref=e231]: 📈
+                - generic [ref=e232]:
+                  - paragraph [ref=e233]: 趋势分析
+                  - paragraph [ref=e234]: 对比历史评分，判断上升/下降趋势
+              - generic:
+                - img
+            - generic [ref=e235]:
+              - generic [ref=e236]:
+                - generic [ref=e237]: 🤖
+                - generic [ref=e238]:
+                  - paragraph [ref=e239]: MiniMax 分析
+                  - paragraph [ref=e240]: 调用 MiniMax M2.7 生成深度绩效洞察
+              - generic:
+                - img
+            - generic [ref=e242]:
+              - generic [ref=e243]: 🏷️
+              - generic [ref=e244]:
+                - paragraph [ref=e245]: 建议标注
+                - paragraph [ref=e246]: 输出晋升/调薪/PIP/辅导等建议标签
+        - generic [ref=e104]:
+          - generic [ref=e107]: 空闲
+          - generic [ref=e110]: 运行中
+          - generic [ref=e113]: 异常
+          - generic [ref=e114]: 点击节点展开 Skill
+      - generic [ref=e115]:
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - generic "状态：空闲" [ref=e120]
+              - generic [ref=e121]:
+                - link "数据采集 Agent" [ref=e122] [cursor=pointer]:
+                  - /url: /agents/data_collector
+                  - heading "数据采集 Agent" [level=3] [ref=e123]
+                  - img [ref=e124]
+                - paragraph [ref=e126]: 空闲
+            - generic [ref=e127]: 运行 0 次
+          - paragraph [ref=e128]: 自动采集 OKR、360评估、业务指标、出勤数据
+          - generic [ref=e129]:
+            - generic [ref=e130]:
+              - paragraph [ref=e131]: 上次运行
+              - paragraph [ref=e132]: —
+            - generic [ref=e133]:
+              - paragraph [ref=e134]: 下次运行
+              - paragraph [ref=e135]: 每小时自动运行
+          - button "触发数据波动" [ref=e137]
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - generic "状态：空闲" [ref=e142]
+              - generic [ref=e143]:
+                - link "分析 Agent" [ref=e144] [cursor=pointer]:
+                  - /url: /agents/analysis
+                  - heading "分析 Agent" [level=3] [ref=e145]
+                  - img [ref=e146]
+                - paragraph [ref=e148]: 空闲
+            - generic [ref=e149]: 运行 2 次
+          - paragraph [ref=e150]: 对员工绩效数据进行 AI 分析，生成建议
+          - generic [ref=e151]:
+            - generic [ref=e152]:
+              - paragraph [ref=e153]: 上次运行
+              - paragraph [ref=e154]: 06/01 09:50
+            - generic [ref=e155]:
+              - paragraph [ref=e156]: 下次运行
+              - paragraph [ref=e157]: 每日 08:00
+          - button "触发分析" [ref=e159]
+        - generic [ref=e161]:
+          - generic [ref=e162]:
+            - generic [ref=e163]:
+              - generic "状态：空闲" [ref=e164]
+              - generic [ref=e165]:
+                - link "辅助决策 Agent" [ref=e166] [cursor=pointer]:
+                  - /url: /agents/decision
+                  - heading "辅助决策 Agent" [level=3] [ref=e167]
+                  - img [ref=e168]
+                - paragraph [ref=e170]: 空闲
+            - generic [ref=e171]: 运行 2 次
+          - paragraph [ref=e172]: 汇总分析结果，生成待审批决策列表
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - paragraph [ref=e175]: 上次运行
+              - paragraph [ref=e176]: 06/01 10:02
+            - generic [ref=e177]:
+              - paragraph [ref=e178]: 下次运行
+              - paragraph [ref=e179]: 分析完成后自动触发
+          - button "生成决策" [ref=e181]
+        - generic [ref=e183]:
+          - generic [ref=e184]:
+            - generic [ref=e185]:
+              - generic "状态：空闲" [ref=e186]
+              - generic [ref=e187]:
+                - link "执行 Agent" [ref=e188] [cursor=pointer]:
+                  - /url: /agents/execution
+                  - heading "执行 Agent" [level=3] [ref=e189]
+                  - img [ref=e190]
+                - paragraph [ref=e192]: 空闲
+            - generic [ref=e193]: 运行 0 次
+          - paragraph [ref=e194]: 审批通过后，自动执行 HR 系统操作
+          - generic [ref=e195]:
+            - generic [ref=e196]:
+              - paragraph [ref=e197]: 上次运行
+              - paragraph [ref=e198]: —
+            - generic [ref=e199]:
+              - paragraph [ref=e200]: 下次运行
+              - paragraph [ref=e201]: 审批通过后自动触发
+          - generic [ref=e203]: 自动触发
+  - button "AI 秘书" [ref=e56]:
+    - img [ref=e57]
+    - generic [ref=e59]: AI 秘书
+  - alert [ref=e204]
+  - button "Open Next.js Dev Tools" [ref=e211] [cursor=pointer]:
+    - img [ref=e212]

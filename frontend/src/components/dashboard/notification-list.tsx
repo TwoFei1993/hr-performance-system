@@ -53,7 +53,7 @@ function DecisionRow({ decision, onApprove, onReject }: DecisionRowProps) {
   }
 
   return (
-    <div className="flex items-start gap-4 py-3.5 border-b border-slate-100 last:border-0">
+    <div className="flex items-start gap-4 py-3.5 border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors rounded-lg px-2 -mx-2">
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="font-medium text-slate-800 text-sm">{decision.employeeName}</span>
@@ -101,7 +101,7 @@ export function NotificationList({
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle>今日 Agent 推送</CardTitle>
+          <CardTitle className="font-display">今日 Agent 推送</CardTitle>
           {decisions.length > 0 && (
             <span className="text-xs text-slate-400">{decisions.length} 条待处理</span>
           )}
@@ -113,8 +113,10 @@ export function NotificationList({
             <Loading size="md" />
           </div>
         ) : decisions.length === 0 ? (
-          <div className="py-10 text-center text-slate-400 text-sm">
-            暂无待审批决策
+          <div className="py-10 flex flex-col items-center justify-center gap-2 text-slate-400">
+            <span className="text-3xl">✅</span>
+            <p className="text-sm font-medium">暂无待审批决策</p>
+            <p className="text-xs text-slate-300">所有决策已处理完毕</p>
           </div>
         ) : (
           <div>

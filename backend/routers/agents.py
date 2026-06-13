@@ -1,5 +1,6 @@
 """Agent 状态与触发路由"""
 import asyncio
+from datetime import datetime, timezone
 from typing import Literal
 
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
@@ -11,6 +12,10 @@ from services.database import AsyncSessionLocal, get_db
 from services.logger import logger
 
 router = APIRouter()
+
+# data_collector 内存状态（进程内持久化）
+_data_collector_last_run: datetime | None = None
+_data_collector_run_count: int = 0
 
 
 class TriggerRequest(BaseModel):
@@ -35,13 +40,13 @@ async def get_agents_status() -> list[AgentStatusInfo]:
     decision_status = await decision_agent.get_status()
     execution_status = await execution_agent.get_status()
 
-    # data_collector 仍为占位
+    # data_collector 使用内存状态
     data_collector_status = AgentStatusInfo(
         agent_name='data_collector',
         status='idle',
-        last_run_at=None,
+        last_run_at=_data_collector_last_run.isoformat() if _data_collector_last_run else None,
         next_run_at=None,
-        run_count=0,
+        run_count=_data_collector_run_count,
         last_error=None,
     )
     return [data_collector_status, analysis_status, decision_status, execution_status]
@@ -65,6 +70,32 @@ async def _run_analysis_background(scope: str) -> None:
             logger.error(f"分析后自动生成决策失败: {e}")
 
 
+async def _run_data_collector_background() -> None:
+    """后台异步执行数据采集（模拟数据波动）"""
+    global _data_collector_last_run, _data_collector_run_count
+    from agents.data_collector import simulate_fluctuation
+    async with AsyncSessionLocal() as db:
+        try:
+            await simulate_fluctuation(db)
+            _data_collector_last_run = datetime.now(timezone.utc)
+            _data_collector_run_count += 1
+            logger.info("数据采集 Agent 数据波动模拟完成")
+        except Exception as e:
+            logger.error(f"数据采集 Agent 失败: {e}")
+
+
+async def _run_decision_background() -> None:
+    """后台异步执行决策生成"""
+    from agents.decision_agent import decision_agent
+    async with AsyncSessionLocal() as db:
+        try:
+            await decision_agent.generate_decisions(db)
+            logger.info("决策 Agent 执行完成")
+        except Exception as e:
+            logger.error(f"决策 Agent 失败: {e}")
+
+
+
 @router.post("/agents/trigger", response_model=TriggerResponse, status_code=202)
 async def trigger_agent(
     req: TriggerRequest,
@@ -79,11 +110,28 @@ async def trigger_agent(
             agent=req.agent,
             scope=req.scope,
         )
-    else:
-        # 其他 Agent 占位，返回 202
-        logger.info(f"Agent [{req.agent}] 触发请求已接收（占位）")
+    elif req.agent == 'data_collector':
+        background_tasks.add_task(_run_data_collector_background)
+        logger.info("数据采集 Agent 已触发")
         return TriggerResponse(
-            message=f"Agent [{req.agent}] 尚未实现，已记录请求",
+            message="数据采集 Agent 已触发，正在模拟数据波动",
             agent=req.agent,
             scope=req.scope,
         )
+    elif req.agent == 'decision':
+        background_tasks.add_task(_run_decision_background)
+        logger.info("决策 Agent 已触发")
+        return TriggerResponse(
+            message="辅助决策 Agent 已触发，正在生成决策建议",
+            agent=req.agent,
+            scope=req.scope,
+        )
+    elif req.agent == 'execution':
+        logger.info("执行 Agent 状态查询")
+        return TriggerResponse(
+            message="执行 Agent 由决策确认自动触发，当前状态正常",
+            agent=req.agent,
+            scope=req.scope,
+        )
+    else:
+        raise HTTPException(status_code=400, detail=f"未知 Agent: {req.agent}")

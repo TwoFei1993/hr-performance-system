@@ -1,11 +1,13 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import type { Decision, DecisionType } from '@/types'
+import { DecisionRationale } from '@/components/decisions/decision-rationale'
+import type { Decision, DecisionType, Level } from '@/types'
 
 interface DecisionCardProps {
-  decision: Decision
+  decision: Decision & { level?: Level }
   onApprove?: (id: string) => void
   onReject?: (id: string) => void
   onDefer?: (id: string) => void
@@ -34,6 +36,12 @@ function confidenceColor(c: number): string {
   return 'bg-red-400'
 }
 
+function confidenceLabel(c: number): string {
+  if (c >= 0.85) return '高置信度'
+  if (c >= 0.65) return '中置信度'
+  return '低置信度'
+}
+
 function formatDate(iso: string): string {
   try {
     return new Date(iso).toLocaleString('zh-CN', {
@@ -55,44 +63,71 @@ export function DecisionCard({
   processing,
 }: DecisionCardProps) {
   const pct = Math.round(decision.confidence * 100)
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4">
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-sm font-semibold text-slate-900">{decision.employeeName}</span>
-            <span className="text-xs text-slate-400">{decision.department}</span>
-            <Badge variant={TYPE_VARIANT[decision.type]}>
-              {TYPE_LABEL[decision.type]}
-            </Badge>
+    <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+      {/* 顶部：员工信息行 */}
+      <div className="px-5 pt-5 pb-4 border-b border-slate-100">
+        <div className="flex items-start justify-between gap-3">
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-base font-bold text-slate-900 tracking-tight">
+                {decision.employeeName}
+              </span>
+              <Badge variant="default">{decision.department}</Badge>
+              {decision.level && (
+                <Badge variant="info">{decision.level}</Badge>
+              )}
+            </div>
+            <div className="flex items-center gap-2">
+              <Badge variant={TYPE_VARIANT[decision.type]}>
+                {TYPE_LABEL[decision.type]}
+              </Badge>
+              <span className="text-xs text-slate-400">
+                {formatDate(decision.createdAt)}
+              </span>
+            </div>
           </div>
-          <p className="text-xs text-slate-400 mt-1">{formatDate(decision.createdAt)}</p>
-        </div>
-        <div className="text-right shrink-0">
-          <p className="text-xs text-slate-400 mb-1">置信度</p>
-          <p className="text-sm font-bold tabular-nums text-slate-700">{pct}%</p>
+          {/* 置信度 */}
+          <div className="shrink-0 text-right">
+            <p className="text-2xl font-bold tabular-nums text-slate-800 leading-none">
+              {pct}
+              <span className="text-sm font-medium text-slate-400">%</span>
+            </p>
+            <p className="text-xs text-slate-400 mt-0.5">
+              {confidenceLabel(decision.confidence)}
+            </p>
+            <div className="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden mt-1.5 ml-auto">
+              <div
+                className={`h-full rounded-full transition-all duration-700 ease-out ${confidenceColor(decision.confidence)}`}
+                style={{ width: mounted ? `${pct}%` : '0%' }}
+                role="progressbar"
+                aria-valuenow={pct}
+                aria-valuemin={0}
+                aria-valuemax={100}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden mb-3">
-          <div
-            className={`h-full rounded-full ${confidenceColor(decision.confidence)}`}
-            style={{ width: `${pct}%` }}
-            role="progressbar"
-            aria-valuenow={pct}
-            aria-valuemin={0}
-            aria-valuemax={100}
-          />
-        </div>
-        <p className="text-sm text-slate-600 leading-relaxed bg-slate-50 rounded-lg px-3 py-2.5 border border-slate-100">
+      {/* 中部：AI 原始理由 + 结构化依据 */}
+      <div className="px-5 py-4 space-y-3">
+        <p className="text-xs text-slate-500 leading-relaxed bg-slate-50 rounded-lg px-3 py-2.5 border border-slate-100">
           {decision.reason}
         </p>
+        <DecisionRationale
+          type={decision.type}
+          confidence={decision.confidence}
+          level={decision.level}
+        />
       </div>
 
+      {/* 底部：操作按钮 */}
       {onApprove && (
-        <div className="flex items-center gap-2 pt-1">
+        <div className="px-5 pb-5 flex items-center gap-2">
           <Button
             variant="primary"
             size="sm"

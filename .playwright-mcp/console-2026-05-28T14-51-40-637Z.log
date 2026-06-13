@@ -1,0 +1,23 @@
+[     148ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[     291ms] TypeError: Cannot read properties of undefined (reading 'toFixed')
+    at http://localhost:3004/_next/static/chunks/src_b8875ef0._.js:378:66
+    at Array.map (<anonymous>)
+    at EmployeeTable (http://localhost:3004/_next/static/chunks/src_b8875ef0._.js:349:41)
+    at react-stack-bottom-frame (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:15119:24)
+    at renderWithHooks (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:6246:24)
+    at updateFunctionComponent (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:7609:21)
+    at beginWork (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:8203:24)
+    at runWithFiberInDEV (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:3081:74)
+    at performUnitOfWork (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10404:97)
+    at workLoopSync (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10296:40)
+    at renderRootSync (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10279:13)
+    at performWorkOnRoot (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10038:56)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:10988:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:1982:64)
+[   69635ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[   69638ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15843
+[   69696ms] [LOG] [Fast Refresh] done in 45ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[   70172ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[   70764ms] [LOG] [Fast Refresh] done in NaNms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376
+[   95789ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[   95842ms] [LOG] [Fast Refresh] done in 125ms @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15376

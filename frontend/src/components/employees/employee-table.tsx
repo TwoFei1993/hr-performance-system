@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { TrendingUp, TrendingDown, Minus, Users } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Loading } from '@/components/ui/loading'
 import type { EmployeeRecord, Recommendation, Trend } from '@/types'
@@ -28,22 +29,24 @@ const REC_VARIANT: Record<Recommendation, BadgeVariant> = {
   normal: 'default',
 }
 
-const TREND_ICON: Record<Trend, string> = {
-  up: '↑',
-  down: '↓',
-  stable: '→',
-}
-
-const TREND_COLOR: Record<Trend, string> = {
-  up: 'text-emerald-600',
-  down: 'text-red-500',
-  stable: 'text-slate-400',
-}
-
 function scoreColor(score: number): string {
   if (score < 60) return 'text-red-600 font-semibold'
   if (score < 80) return 'text-amber-600 font-semibold'
   return 'text-emerald-600 font-semibold'
+}
+
+interface TrendIconProps {
+  trend: Trend
+}
+
+function TrendIcon({ trend }: TrendIconProps) {
+  if (trend === 'up') {
+    return <TrendingUp className="w-4 h-4 text-emerald-500 inline" aria-label="上升" />
+  }
+  if (trend === 'down') {
+    return <TrendingDown className="w-4 h-4 text-red-500 inline" aria-label="下降" />
+  }
+  return <Minus className="w-4 h-4 text-slate-400 inline" aria-label="持平" />
 }
 
 export function EmployeeTable({ employees, loading }: EmployeeTableProps) {
@@ -58,7 +61,7 @@ export function EmployeeTable({ employees, loading }: EmployeeTableProps) {
   if (employees.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-slate-400">
-        <span className="text-4xl mb-3">👥</span>
+        <Users className="w-10 h-10 mb-3 text-slate-300" aria-hidden="true" />
         <p className="text-sm">暂无员工数据</p>
       </div>
     )
@@ -66,7 +69,7 @@ export function EmployeeTable({ employees, loading }: EmployeeTableProps) {
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-sm" role="table" aria-label="员工绩效列表">
+      <table className="w-full text-sm" role="table" aria-label="员工绩效列表" data-testid="employee-table">
         <thead>
           <tr className="border-b border-slate-100">
             <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">姓名</th>
@@ -82,7 +85,8 @@ export function EmployeeTable({ employees, loading }: EmployeeTableProps) {
           {employees.map((emp) => (
             <tr
               key={emp.id}
-              className="hover:bg-slate-50 transition-colors cursor-pointer"
+              data-testid="employee-row"
+              className="hover:bg-slate-50 transition-colors duration-100 cursor-pointer"
             >
               <td className="px-4 py-3 font-medium text-slate-900">{emp.name}</td>
               <td className="px-4 py-3 text-slate-600">{emp.department}</td>
@@ -95,13 +99,13 @@ export function EmployeeTable({ employees, loading }: EmployeeTableProps) {
                   {REC_LABEL[emp.recommendation]}
                 </Badge>
               </td>
-              <td className={`px-4 py-3 text-center text-base font-bold ${TREND_COLOR[emp.trend]}`}>
-                {TREND_ICON[emp.trend]}
+              <td className="px-4 py-3 text-center">
+                <TrendIcon trend={emp.trend} />
               </td>
               <td className="px-4 py-3 text-right">
                 <Link
                   href={`/employees/${emp.id}`}
-                  className="text-blue-600 hover:text-blue-800 text-xs font-medium hover:underline"
+                  className="text-indigo-600 hover:text-indigo-800 text-xs font-medium hover:underline transition-colors"
                   aria-label={`查看 ${emp.name} 的详情`}
                 >
                   查看详情

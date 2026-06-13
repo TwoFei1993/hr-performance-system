@@ -1,0 +1,2 @@
+[    1749ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/agents:0
+[    1809ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/favicon.ico:0

@@ -10,17 +10,17 @@ interface AgendaListProps {
 }
 
 const TYPE_LABEL: Record<DecisionType, string> = {
-  promote: '升职',
-  salary_raise: '调薪',
-  pip: 'PIP',
-  one_on_one: '1:1',
+  promote: '晋升讨论',
+  salary_raise: '调薪讨论',
+  pip: '绩效改进',
+  one_on_one: '需关注',
 }
 
 type BadgeVariant = 'info' | 'success' | 'danger' | 'warning'
 
 const TYPE_VARIANT: Record<DecisionType, BadgeVariant> = {
   promote: 'info',
-  salary_raise: 'success',
+  salary_raise: 'info',
   pip: 'danger',
   one_on_one: 'warning',
 }

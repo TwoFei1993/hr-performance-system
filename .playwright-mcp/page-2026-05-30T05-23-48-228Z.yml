@@ -1,0 +1,72 @@
+- generic [active] [ref=e1]:
+  - complementary "主导航" [ref=e2]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 通威集团
+        - paragraph [ref=e10]: 绩效管理平台
+    - navigation [ref=e11]:
+      - link "主控台" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+        - generic [ref=e18]: 主控台
+      - link "员工绩效" [ref=e19] [cursor=pointer]:
+        - /url: /employees
+        - img [ref=e20]
+        - generic [ref=e25]: 员工绩效
+      - link "Agent 状态" [ref=e26] [cursor=pointer]:
+        - /url: /agents
+        - img [ref=e27]
+        - generic [ref=e30]: Agent 状态
+      - link "决策审批" [ref=e31] [cursor=pointer]:
+        - /url: /decisions
+        - img [ref=e32]
+        - generic [ref=e35]: 决策审批
+      - link "月会管理" [ref=e36] [cursor=pointer]:
+        - /url: /monthly-meeting
+        - img [ref=e37]
+        - generic [ref=e39]: 月会管理
+      - link "HR 系统" [ref=e40] [cursor=pointer]:
+        - /url: /hr-system
+        - img [ref=e41]
+        - generic [ref=e45]: HR 系统
+    - generic [ref=e46]:
+      - paragraph [ref=e47]: 绩效管理 Agent
+      - paragraph [ref=e48]: v1.0.0
+  - main [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e52]:
+        - heading "员工绩效总览" [level=1] [ref=e53]
+        - paragraph [ref=e54]: 共 0 名员工
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - heading "员工列表" [level=3] [ref=e57]
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - combobox "按部门筛选" [ref=e60] [cursor=pointer]:
+                - option "全部部门" [selected]
+                - option "研发"
+                - option "销售"
+                - option "运营"
+                - option "财务"
+                - option "市场"
+                - option "HR"
+              - generic: ▾
+            - generic [ref=e61]:
+              - combobox "按建议类型筛选" [ref=e62] [cursor=pointer]:
+                - option "全部建议" [selected]
+                - option "升职"
+                - option "调薪"
+                - option "PIP"
+                - option "1:1"
+                - option "正常"
+              - generic: ▾
+            - generic [ref=e63]:
+              - searchbox "按姓名搜索" [ref=e64]
+              - generic: ⌕
+        - status "加载员工数据..." [ref=e67]:
+          - generic [ref=e69]: 加载员工数据...
+  - button "AI 助手" [ref=e71]:
+    - img [ref=e72]
+    - generic [ref=e74]: AI 助手
+  - alert [ref=e75]

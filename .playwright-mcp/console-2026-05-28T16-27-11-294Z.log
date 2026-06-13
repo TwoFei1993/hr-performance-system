@@ -1,0 +1,275 @@
+[    3086ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/73576_next_dist_compiled_993ed592._.js:16591
+[ 3081346ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/73576_next_dist_client_374f61ca._.js:15512
+[ 3084107ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=e44f4e83-2792-476b-99f5-42ceae2e24da:0
+[ 3089469ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=e44f4e83-2792-476b-99f5-42ceae2e24da:0
+[ 3094828ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=e44f4e83-2792-476b-99f5-42ceae2e24da:0
+[ 3100190ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=e44f4e83-2792-476b-99f5-42ceae2e24da:0
+[ 3105556ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=e44f4e83-2792-476b-99f5-42ceae2e24da:0
+[ 3110930ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3004/api/stream/notifications?client_id=e44f4e83-2792-476b-99f5-42ceae2e24da:0
+[30583211ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[30583382ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[30583909ms] [LOG] [Fast Refresh] done in 631ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[30613633ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[30613650ms] [LOG] [Fast Refresh] done in 119ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[30629246ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[30629338ms] [LOG] [Fast Refresh] done in 193ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[30822066ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[30822083ms] [LOG] [Fast Refresh] done in 117ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[30823939ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[30823950ms] [LOG] [Fast Refresh] done in 111ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[31629796ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[31629807ms] [LOG] [Fast Refresh] done in 113ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[31635821ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://localhost:3004/api/agents/trigger:0
+[31636809ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://localhost:3004/api/agents/trigger:0
+[31637064ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://localhost:3004/api/agents/trigger:0
+[31637237ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://localhost:3004/api/agents/trigger:0
+[31637409ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://localhost:3004/api/agents/trigger:0
+[31653422ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://localhost:3004/api/agents/trigger:0
+[32429712ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32429774ms] [LOG] [Fast Refresh] done in 133ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32438269ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32438304ms] [LOG] [Fast Refresh] done in 74ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32439610ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32439648ms] [LOG] [Fast Refresh] done in 53ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32442713ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32442743ms] [LOG] [Fast Refresh] done in 77ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32450395ms] [ERROR] ./src/app/decisions/page.tsx:4:1
+Export DecisionCard doesn't exist in target module
+  2 |
+  3 | import { useEffect, useState, useCallback } from 'react'
+> 4 | import { DecisionCard } from '@/components/decisions/decision-card'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { Badge } from '@/components/ui/badge'
+  6 | import { PageLoading } from '@/components/ui/loading'
+  7 | import {
+
+The export DecisionCard was not found in module [project]/src/components/decisions/decision-card.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32450395ms] [ERROR] ./src/app/decisions/page.tsx:4:1
+Export DecisionCard doesn't exist in target module
+  2 |
+  3 | import { useEffect, useState, useCallback } from 'react'
+> 4 | import { DecisionCard } from '@/components/decisions/decision-card'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { Badge } from '@/components/ui/badge'
+  6 | import { PageLoading } from '@/components/ui/loading'
+  7 | import {
+
+The export DecisionCard was not found in module [project]/src/components/decisions/decision-card.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32450653ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32458520ms] [ERROR] ./src/app/decisions/page.tsx:4:1
+Export DecisionCard doesn't exist in target module
+  2 |
+  3 | import { useEffect, useState, useCallback } from 'react'
+> 4 | import { DecisionCard } from '@/components/decisions/decision-card'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { Badge } from '@/components/ui/badge'
+  6 | import { PageLoading } from '@/components/ui/loading'
+  7 | import {
+
+The export DecisionCard was not found in module [project]/src/components/decisions/decision-card.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32458520ms] [ERROR] ./src/app/decisions/page.tsx:4:1
+Export DecisionCard doesn't exist in target module
+  2 |
+  3 | import { useEffect, useState, useCallback } from 'react'
+> 4 | import { DecisionCard } from '@/components/decisions/decision-card'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { Badge } from '@/components/ui/badge'
+  6 | import { PageLoading } from '@/components/ui/loading'
+  7 | import {
+
+The export DecisionCard was not found in module [project]/src/components/decisions/decision-card.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32458618ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32464692ms] [ERROR] ./src/app/decisions/page.tsx:4:1
+Export DecisionCard doesn't exist in target module
+  2 |
+  3 | import { useEffect, useState, useCallback } from 'react'
+> 4 | import { DecisionCard } from '@/components/decisions/decision-card'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { Badge } from '@/components/ui/badge'
+  6 | import { PageLoading } from '@/components/ui/loading'
+  7 | import {
+
+The export DecisionCard was not found in module [project]/src/components/decisions/decision-card.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32464692ms] [ERROR] ./src/app/decisions/page.tsx:4:1
+Export DecisionCard doesn't exist in target module
+  2 |
+  3 | import { useEffect, useState, useCallback } from 'react'
+> 4 | import { DecisionCard } from '@/components/decisions/decision-card'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { Badge } from '@/components/ui/badge'
+  6 | import { PageLoading } from '@/components/ui/loading'
+  7 | import {
+
+The export DecisionCard was not found in module [project]/src/components/decisions/decision-card.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32464783ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32466363ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32466482ms] [LOG] [Fast Refresh] done in 97ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32473343ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32473403ms] [LOG] [Fast Refresh] done in 138ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32479604ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32479637ms] [LOG] [Fast Refresh] done in 41ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32481742ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32481771ms] [LOG] [Fast Refresh] done in 14ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32488579ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32488610ms] [LOG] [Fast Refresh] done in 28ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32493957ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32494001ms] [LOG] [Fast Refresh] done in 46ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32498731ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32498762ms] [LOG] [Fast Refresh] done in 43ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32513165ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32513202ms] [LOG] [Fast Refresh] done in 66ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32520632ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32520633ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32520763ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32522585ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32522586ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32522685ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32529185ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32529185ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32529281ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32530471ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32530471ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32530563ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32531837ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32531872ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32531872ms] [ERROR] ./src/app/hr-system/page.tsx:5:1
+Export OperationLog doesn't exist in target module
+  3 | import { useEffect, useState, useCallback } from 'react'
+  4 | import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+> 5 | import { OperationLog } from '@/components/hr/operation-log'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { fetchDecisionHistory } from '@/lib/api'
+  7 | import type { Decision } from '@/types'
+  8 |
+
+The export OperationLog was not found in module [project]/src/components/hr/operation-log.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist. @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:773
+[32535873ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32536017ms] [LOG] [Fast Refresh] done in 163ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32536128ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32536632ms] [LOG] [Fast Refresh] done in 606ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[32536823ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[32537090ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/monthly-meeting?_rsc=11qne:0
+[32537233ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/monthly-meeting:0
+[32537271ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/favicon.ico:0

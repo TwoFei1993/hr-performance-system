@@ -1,0 +1,186 @@
+- generic [active] [ref=e1]:
+  - complementary "主导航" [ref=e2]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 通威集团
+        - paragraph [ref=e10]: 绩效管理平台
+    - navigation [ref=e11]:
+      - link "主控台" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+        - generic [ref=e18]: 主控台
+      - link "员工绩效" [ref=e19] [cursor=pointer]:
+        - /url: /employees
+        - img [ref=e20]
+        - generic [ref=e25]: 员工绩效
+      - link "Agent 状态" [ref=e26] [cursor=pointer]:
+        - /url: /agents
+        - img [ref=e27]
+        - generic [ref=e30]: Agent 状态
+      - link "决策审批" [ref=e31] [cursor=pointer]:
+        - /url: /decisions
+        - img [ref=e32]
+        - generic [ref=e35]: 决策审批
+      - link "月会管理" [ref=e36] [cursor=pointer]:
+        - /url: /monthly-meeting
+        - img [ref=e37]
+        - generic [ref=e39]: 月会管理
+      - link "HR 系统" [ref=e40] [cursor=pointer]:
+        - /url: /hr-system
+        - img [ref=e41]
+        - generic [ref=e45]: HR 系统
+    - generic [ref=e46]:
+      - paragraph [ref=e47]: 绩效管理 Agent
+      - paragraph [ref=e48]: v1.0.0
+  - main [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - heading "HR 系统" [level=1] [ref=e53]
+          - paragraph [ref=e54]: 操作执行记录 · 共 0 条已确认决策
+        - generic [ref=e55]: 系统正常运行
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - img [ref=e61]
+          - generic [ref=e66]:
+            - paragraph [ref=e67]: 本月执行操作
+            - paragraph [ref=e68]: "0"
+        - generic [ref=e69]:
+          - img [ref=e72]
+          - generic [ref=e75]:
+            - paragraph [ref=e76]: 升职人数
+            - paragraph [ref=e77]: "0"
+        - generic [ref=e78]:
+          - img [ref=e81]
+          - generic [ref=e83]:
+            - paragraph [ref=e84]: 调薪人数
+            - paragraph [ref=e85]: "0"
+        - generic [ref=e86]:
+          - img [ref=e89]
+          - generic [ref=e91]:
+            - paragraph [ref=e92]: PIP 人数
+            - paragraph [ref=e93]: "0"
+      - heading "操作类型分布" [level=3] [ref=e96]
+      - generic [ref=e99]:
+        - heading "执行记录（已确认决策）" [level=3] [ref=e101]
+        - generic [ref=e103]: 加载中...
+      - generic [ref=e104]:
+        - heading "公司组织架构" [level=3] [ref=e106]
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic:
+              - generic: 全公司 120 人 | 5 个部门
+            - generic [ref=e111]:
+              - paragraph [ref=e112]: 总经理
+              - paragraph [ref=e113]: GM
+          - generic [ref=e115]:
+            - generic [ref=e118]:
+              - generic [ref=e119]:
+                - generic:
+                  - generic: 18 人 | 2 个小组
+                - generic [ref=e120]:
+                  - paragraph [ref=e121]: 设备部
+                  - paragraph [ref=e122]: 18 人
+              - generic [ref=e125]:
+                - generic [ref=e128]:
+                  - generic:
+                    - generic: 9 人
+                  - generic [ref=e129]:
+                    - generic [ref=e130]: 设备维修组
+                    - generic [ref=e131]: 9 人
+                - generic [ref=e134]:
+                  - generic:
+                    - generic: 9 人
+                  - generic [ref=e135]:
+                    - generic [ref=e136]: 设备保养组
+                    - generic [ref=e137]: 9 人
+            - generic [ref=e140]:
+              - generic [ref=e141]:
+                - generic:
+                  - generic: 30 人 | 3 个小组
+                - generic [ref=e142]:
+                  - paragraph [ref=e143]: 生产部
+                  - paragraph [ref=e144]: 30 人
+              - generic [ref=e147]:
+                - generic [ref=e150]:
+                  - generic:
+                    - generic: 10 人
+                  - generic [ref=e151]:
+                    - generic [ref=e152]: 生产一组
+                    - generic [ref=e153]: 10 人
+                - generic [ref=e156]:
+                  - generic:
+                    - generic: 10 人
+                  - generic [ref=e157]:
+                    - generic [ref=e158]: 生产二组
+                    - generic [ref=e159]: 10 人
+                - generic [ref=e162]:
+                  - generic:
+                    - generic: 10 人
+                  - generic [ref=e163]:
+                    - generic [ref=e164]: 生产三组
+                    - generic [ref=e165]: 10 人
+            - generic [ref=e168]:
+              - generic [ref=e169]:
+                - generic:
+                  - generic: 15 人 | 2 个小组
+                - generic [ref=e170]:
+                  - paragraph [ref=e171]: 安环部
+                  - paragraph [ref=e172]: 15 人
+              - generic [ref=e175]:
+                - generic [ref=e178]:
+                  - generic:
+                    - generic: 8 人
+                  - generic [ref=e179]:
+                    - generic [ref=e180]: 安全组
+                    - generic [ref=e181]: 8 人
+                - generic [ref=e184]:
+                  - generic:
+                    - generic: 7 人
+                  - generic [ref=e185]:
+                    - generic [ref=e186]: 环保组
+                    - generic [ref=e187]: 7 人
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - generic:
+                  - generic: 12 人 | 2 个小组
+                - generic [ref=e192]:
+                  - paragraph [ref=e193]: 人行部
+                  - paragraph [ref=e194]: 12 人
+              - generic [ref=e197]:
+                - generic [ref=e200]:
+                  - generic:
+                    - generic: 6 人
+                  - generic [ref=e201]:
+                    - generic [ref=e202]: 人事组
+                    - generic [ref=e203]: 6 人
+                - generic [ref=e206]:
+                  - generic:
+                    - generic: 6 人
+                  - generic [ref=e207]:
+                    - generic [ref=e208]: 行政组
+                    - generic [ref=e209]: 6 人
+            - generic [ref=e212]:
+              - generic [ref=e213]:
+                - generic:
+                  - generic: 20 人 | 2 个小组
+                - generic [ref=e214]:
+                  - paragraph [ref=e215]: 质量部
+                  - paragraph [ref=e216]: 20 人
+              - generic [ref=e219]:
+                - generic [ref=e222]:
+                  - generic:
+                    - generic: 10 人
+                  - generic [ref=e223]:
+                    - generic [ref=e224]: 检验组
+                    - generic [ref=e225]: 10 人
+                - generic [ref=e228]:
+                  - generic:
+                    - generic: 10 人
+                  - generic [ref=e229]:
+                    - generic [ref=e230]: 质量改进组
+                    - generic [ref=e231]: 10 人
+  - button "AI 助手" [ref=e233]:
+    - img [ref=e234]
+    - generic [ref=e236]: AI 助手

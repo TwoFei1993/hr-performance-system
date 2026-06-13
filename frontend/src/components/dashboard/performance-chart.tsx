@@ -27,6 +27,21 @@ function getBarColor(index: number, total: number): string {
 }
 
 export function PerformanceChart({ data }: PerformanceChartProps) {
+  if (!data || data.length === 0) {
+    return (
+      <Card className="h-full">
+        <CardHeader>
+          <CardTitle>绩效分布</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center justify-center h-64 text-slate-400 text-sm">
+            暂无数据
+          </div>
+        </CardContent>
+      </Card>
+    )
+  }
+
   return (
     <Card className="h-full">
       <CardHeader>
@@ -52,11 +67,12 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
             />
             <Tooltip
               contentStyle={{
-                background: '#1e293b',
-                border: 'none',
+                background: '#ffffff',
+                border: '1px solid #e2e8f0',
                 borderRadius: '8px',
-                color: '#f8fafc',
+                color: '#0f172a',
                 fontSize: '12px',
+                boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)',
               }}
               cursor={{ fill: '#f1f5f9' }}
               formatter={(value) => [value, '人数']}

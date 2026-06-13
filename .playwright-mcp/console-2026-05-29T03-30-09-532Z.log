@@ -1,0 +1,9 @@
+[     254ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[     534ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[     548ms] [LOG] [Fast Refresh] done in 191ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[  528745ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://localhost:8002/api/stream/notifications?client_id=9a42a22e-8b6c-4e6c-b570-b2ec443682e3:0
+[  534111ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8002/api/stream/notifications?client_id=9a42a22e-8b6c-4e6c-b570-b2ec443682e3:0
+[  539492ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8002/api/stream/notifications?client_id=9a42a22e-8b6c-4e6c-b570-b2ec443682e3:0
+[  544849ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8002/api/stream/notifications?client_id=9a42a22e-8b6c-4e6c-b570-b2ec443682e3:0
+[  550213ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8002/api/stream/notifications?client_id=9a42a22e-8b6c-4e6c-b570-b2ec443682e3:0
+[  555574ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8002/api/stream/notifications?client_id=9a42a22e-8b6c-4e6c-b570-b2ec443682e3:0

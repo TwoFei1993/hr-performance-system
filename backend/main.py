@@ -1,5 +1,12 @@
 """FastAPI 应用入口"""
+import os
 from contextlib import asynccontextmanager
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+# 加载项目根目录的 .env 文件
+load_dotenv(Path(__file__).parent.parent / ".env")
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -7,11 +14,13 @@ from sqlalchemy import func, select
 
 from agents.data_collector import seed_database
 from routers.agents import router as agents_router
+from routers.chat import router as chat_router
 from routers.decisions import router as decisions_router
 from routers.employees import router as employees_router
 from routers.health import router as health_router
 from routers.monthly_meeting import router as monthly_meeting_router
 from routers.reports import router as reports_router
+from routers.reset import router as reset_router
 from routers.stream import router as stream_router
 from services.database import EmployeeORM, get_db, init_db
 from services.logger import logger
@@ -47,7 +56,14 @@ app = FastAPI(title="绩效管理 Agent API", version="0.1.0", lifespan=lifespan
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:3002",
+        "http://localhost:3003",
+        "http://localhost:3004",
+        "http://localhost:3005",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -60,6 +76,8 @@ app.include_router(decisions_router, prefix="/api")
 app.include_router(stream_router, prefix="/api")
 app.include_router(reports_router, prefix="/api")
 app.include_router(monthly_meeting_router, prefix="/api")
+app.include_router(chat_router, prefix="/api")
+app.include_router(reset_router, prefix="/api")
 
 logger.info("绩效管理 Agent 服务启动")
 

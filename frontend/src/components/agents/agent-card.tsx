@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import { ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { AgentStatusInfo, AgentName, AgentStatus } from '@/types'
 
@@ -35,6 +37,14 @@ const STATUS_LABEL: Record<AgentStatus, string> = {
   error: '异常',
 }
 
+/** 当 nextRunAt 为 null 时的兜底文案 */
+const NEXT_RUN_FALLBACK: Record<AgentName, string> = {
+  data_collector: '每小时自动运行',
+  analysis: '每日 08:00',
+  decision: '分析完成后自动触发',
+  execution: '审批通过后自动触发',
+}
+
 function formatTime(iso?: string): string {
   if (!iso) return '—'
   try {
@@ -49,11 +59,21 @@ function formatTime(iso?: string): string {
   }
 }
 
+const TRIGGER_LABEL: Partial<Record<AgentName, string>> = {
+  data_collector: '触发数据波动',
+  analysis: '触发分析',
+  decision: '生成决策',
+}
+
 export function AgentCard({ agent, onTrigger, triggering }: AgentCardProps) {
-  const canTrigger = agent.agentName === 'analysis'
+  const triggerLabel = TRIGGER_LABEL[agent.agentName]
+  const canTrigger = triggerLabel !== undefined
+  const nextRunDisplay = agent.nextRunAt
+    ? formatTime(agent.nextRunAt)
+    : NEXT_RUN_FALLBACK[agent.agentName]
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4">
+    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4 hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-2.5">
           <span
@@ -61,9 +81,15 @@ export function AgentCard({ agent, onTrigger, triggering }: AgentCardProps) {
             aria-label={`状态：${STATUS_LABEL[agent.status]}`}
           />
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">
-              {AGENT_LABEL[agent.agentName]}
-            </h3>
+            <Link
+              href={`/agents/${agent.agentName}`}
+              className="group flex items-center gap-1 hover:text-indigo-600 transition-colors"
+            >
+              <h3 className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600">
+                {AGENT_LABEL[agent.agentName]}
+              </h3>
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-500 transition-colors" />
+            </Link>
             <p className="text-xs text-slate-500 mt-0.5">
               {STATUS_LABEL[agent.status]}
             </p>
@@ -85,7 +111,7 @@ export function AgentCard({ agent, onTrigger, triggering }: AgentCardProps) {
         </div>
         <div className="bg-slate-50 rounded-lg px-3 py-2">
           <p className="text-slate-400 mb-0.5">下次运行</p>
-          <p className="font-medium text-slate-700">{formatTime(agent.nextRunAt)}</p>
+          <p className="font-medium text-slate-700">{nextRunDisplay}</p>
         </div>
       </div>
 
@@ -98,8 +124,9 @@ export function AgentCard({ agent, onTrigger, triggering }: AgentCardProps) {
             onClick={() => onTrigger?.(agent.agentName)}
             disabled={agent.status === 'running'}
             className="w-full"
+            data-testid="trigger-analysis-btn"
           >
-            {agent.status === 'running' ? '运行中...' : '手动触发'}
+            {agent.status === 'running' ? '运行中...' : triggerLabel}
           </Button>
         ) : (
           <div className="text-center text-xs text-slate-400 py-1.5 bg-slate-50 rounded-lg">

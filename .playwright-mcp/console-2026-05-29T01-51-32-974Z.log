@@ -1,0 +1,78 @@
+[     114ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[    1563ms] [LOG] [Fast Refresh] done in 1550ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[    1681ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[    1862ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[    2263ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[    2385ms] [LOG] [Fast Refresh] done in 225ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 1970987ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 1971017ms] [LOG] [Fast Refresh] done in 132ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 1971082ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[ 1971263ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 1971810ms] [LOG] [Fast Refresh] done in 651ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 2220236ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 2221173ms] [LOG] [Fast Refresh] done in 1036ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 2221279ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 2221397ms] [LOG] [Fast Refresh] done in 219ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 2225051ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 2226472ms] [LOG] [Fast Refresh] done in 1523ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 2226580ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 2226735ms] [LOG] [Fast Refresh] done in 257ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 2227072ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 2227167ms] [LOG] [Fast Refresh] done in 238ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3244252ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0
+[ 3244252ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/reports/monthly/list?size=12:0
+[ 3244265ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0
+[ 3244266ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/reports/monthly/list?size=12:0
+[ 3245446ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0
+[ 3245448ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/reports/monthly/list?size=12:0
+[ 3245456ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0
+[ 3245457ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/reports/monthly/list?size=12:0
+[ 3263203ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_compiled_7040a26a._.js:16591
+[ 3263322ms] [LOG] [Fast Refresh] done in NaNms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3264628ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0
+[ 3264629ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/reports/monthly/list?size=12:0
+[ 3264641ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0
+[ 3264641ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/reports/monthly/list?size=12:0
+[ 3266293ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3266337ms] [LOG] [Fast Refresh] done in 154ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3282686ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0
+[ 3282687ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/reports/monthly/list?size=12:0
+[ 3282699ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/monthly-meeting/agenda:0
+[ 3282699ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3004/api/reports/monthly/list?size=12:0
+[ 3672799ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3672833ms] [LOG] [Fast Refresh] done in 135ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3688969ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3689005ms] [LOG] [Fast Refresh] done in 78ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3691777ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3691891ms] [LOG] [Fast Refresh] done in 216ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3696024ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3696055ms] [LOG] [Fast Refresh] done in 79ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3704538ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3704586ms] [LOG] [Fast Refresh] done in 62ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3714047ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3714061ms] [LOG] [Fast Refresh] done in 66ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3720276ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3720346ms] [LOG] [Fast Refresh] done in 86ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3726469ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3726496ms] [LOG] [Fast Refresh] done in 49ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3728411ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3728460ms] [LOG] [Fast Refresh] done in 152ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3752388ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3752433ms] [LOG] [Fast Refresh] done in 86ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3752633ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3752687ms] [LOG] [Fast Refresh] done in 154ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3752912ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3753568ms] [LOG] [Fast Refresh] done in 760ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3753678ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3753694ms] [LOG] [Fast Refresh] done in 119ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3753807ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3754330ms] [LOG] [Fast Refresh] done in 624ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3754528ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3754548ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/hr-system?_rsc=13hpj:0
+[ 3754606ms] [LOG] [Fast Refresh] done in 182ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3754795ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3754885ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/hr-system?_rsc=13hpj:0
+[ 3754896ms] [LOG] [Fast Refresh] done in 203ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[ 3755054ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[ 3755213ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/hr-system:0
+[ 3755285ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/favicon.ico:0

@@ -1,0 +1,14 @@
+[     168ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15512
+[     264ms] [LOG] [Fast Refresh] done in 198ms @ http://localhost:3004/_next/static/chunks/ca39b_next_dist_client_08b47e83._.js:15376
+[    3492ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/src_app_globals_b805903d.css:0
+[    3537ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_87ee4c35._.js:0
+[    4582ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/17b88_recharts_es6_component_6becfed3._.js:0
+[    4640ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/17b88_recharts_es6_state_ce58e531._.js:0
+[    4667ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/src_232fc784._.js:0
+[    4719ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/17b88_recharts_es6_util_008593ed._.js:0
+[    4801ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/17b88_recharts_es6_cartesian_bdc93f35._.js:0
+[    4854ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/17b88_recharts_es6_polar_3226eb11._.js:0
+[    5412ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/17b88_recharts_es6_c45801ca._.js:0
+[    5454ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/node_modules__pnpm_f00e36e7._.js:0
+[    5500ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/17b88_recharts_es6_shape_81320e77._.js:0
+[    5543ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3004/_next/static/chunks/src_app_page_tsx_8ad00426._.js:0

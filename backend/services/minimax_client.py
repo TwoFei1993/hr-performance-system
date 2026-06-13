@@ -10,7 +10,7 @@ from models.employee import EmployeeRecord, Recommendation
 from services.rule_engine import AnalysisResult, analyze_by_rules
 from services.logger import logger
 
-MINIMAX_BASE_URL = "https://api.minimaxi.chat/v1"
+MINIMAX_BASE_URL = "https://api.minimax.chat/v1"
 MINIMAX_MODEL = "MiniMax-M2.7"
 
 _SYSTEM_PROMPT = """你是一位专业的HR绩效分析专家。请根据员工的绩效数据，给出客观的评估建议。

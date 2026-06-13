@@ -1,0 +1,151 @@
+- generic [active] [ref=e1]:
+  - complementary "主导航" [ref=e2]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]:
+        - paragraph [ref=e9]: 通威集团
+        - paragraph [ref=e10]: 绩效管理平台
+    - navigation [ref=e11]:
+      - link "主控台" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img [ref=e13]
+        - generic [ref=e18]: 主控台
+      - link "员工绩效" [ref=e19] [cursor=pointer]:
+        - /url: /employees
+        - img [ref=e20]
+        - generic [ref=e25]: 员工绩效
+      - link "Agent 状态" [ref=e26] [cursor=pointer]:
+        - /url: /agents
+        - img [ref=e27]
+        - generic [ref=e30]: Agent 状态
+      - link "决策审批" [ref=e31] [cursor=pointer]:
+        - /url: /decisions
+        - img [ref=e32]
+        - generic [ref=e35]: 决策审批
+      - link "月会管理" [ref=e36] [cursor=pointer]:
+        - /url: /monthly-meeting
+        - img [ref=e37]
+        - generic [ref=e39]: 月会管理
+      - link "HR 系统" [ref=e40] [cursor=pointer]:
+        - /url: /hr-system
+        - img [ref=e41]
+        - generic [ref=e45]: HR 系统
+    - generic [ref=e46]:
+      - paragraph [ref=e47]: 绩效管理 Agent
+      - paragraph [ref=e48]: v1.0.0
+  - main [ref=e49]:
+    - generic [ref=e333]:
+      - generic [ref=e334]:
+        - link "返回员工列表" [ref=e335] [cursor=pointer]:
+          - /url: /employees
+          - text: ← 返回
+        - generic [ref=e336]: /
+        - heading "罗静" [level=1] [ref=e337]
+        - generic [ref=e338]: 销售
+        - generic [ref=e339]: P6
+      - generic [ref=e340]:
+        - generic [ref=e341]:
+          - heading "基础信息" [level=3] [ref=e343]
+          - generic [ref=e344]:
+            - generic [ref=e345]:
+              - generic [ref=e346]: 姓名
+              - generic [ref=e347]: 罗静
+            - generic [ref=e348]:
+              - generic [ref=e349]: 部门
+              - generic [ref=e350]: 销售
+            - generic [ref=e351]:
+              - generic [ref=e352]: 职级
+              - generic [ref=e353]: P6
+            - generic [ref=e354]:
+              - generic [ref=e355]: 直属上级
+              - generic [ref=e356]: 王总
+            - generic [ref=e357]:
+              - generic [ref=e358]: 入职日期
+              - generic [ref=e359]: 2015-05-10
+            - generic [ref=e360]:
+              - generic [ref=e361]:
+                - text: "92.2"
+                - paragraph [ref=e362]: 综合得分
+              - generic [ref=e364]: 升职
+        - generic [ref=e365]:
+          - heading "本季度指标" [level=3] [ref=e367]
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - generic [ref=e370]:
+                - generic [ref=e371]: OKR完成率
+                - generic [ref=e372]: "95.5"
+              - paragraph [ref=e375]: 权重 30%
+            - generic [ref=e376]:
+              - generic [ref=e377]:
+                - generic [ref=e378]: 360评估
+                - generic [ref=e379]: "95.4"
+              - paragraph [ref=e382]: 权重 25%
+            - generic [ref=e383]:
+              - generic [ref=e384]:
+                - generic [ref=e385]: 业务指标
+                - generic [ref=e386]: "88.4"
+              - paragraph [ref=e389]: 权重 30%
+            - generic [ref=e390]:
+              - generic [ref=e391]:
+                - generic [ref=e392]: 出勤履职
+                - generic [ref=e393]: "87.7"
+              - paragraph [ref=e396]: 权重 15%
+        - generic [ref=e397]:
+          - heading "四维度得分" [level=3] [ref=e399]
+          - generic [ref=e402]:
+            - generic:
+              - status:
+                - paragraph: 360评估
+                - list:
+                  - listitem: "得分 : 95.4"
+            - application [ref=e403]:
+              - generic [ref=e419]:
+                - generic [ref=e421]: OKR
+                - generic [ref=e423]: 360评估
+                - generic [ref=e425]: 业务指标
+                - generic [ref=e427]: 出勤履职
+      - generic [ref=e431]:
+        - heading "近6个月绩效趋势" [level=3] [ref=e433]
+        - application [ref=e437]:
+          - generic [ref=e454]:
+            - generic [ref=e455]:
+              - generic [ref=e457]: 6月前
+              - generic [ref=e459]: 5月前
+              - generic [ref=e461]: 4月前
+              - generic [ref=e463]: 3月前
+              - generic [ref=e465]: 2月前
+              - generic [ref=e467]: 上月
+            - generic [ref=e468]:
+              - generic [ref=e470]: "0"
+              - generic [ref=e472]: "25"
+              - generic [ref=e474]: "50"
+              - generic [ref=e476]: "75"
+              - generic [ref=e478]: "100"
+      - generic [ref=e479]:
+        - heading "AI 分析报告" [level=3] [ref=e481]
+        - generic [ref=e483]:
+          - generic [ref=e484]:
+            - generic [ref=e485]: AI 建议：
+            - generic [ref=e486]: 升职
+          - generic [ref=e487]:
+            - paragraph [ref=e488]: 建议理由
+            - paragraph [ref=e489]: 综合评分 92.2，表现优异，建议晋升
+          - generic [ref=e490]:
+            - paragraph [ref=e491]: 综合得分计算公式
+            - generic [ref=e492]:
+              - paragraph [ref=e493]: OKR完成率 × 30% + 360评估 × 25% + 业务指标 × 30% + 出勤履职 × 15%
+              - paragraph [ref=e494]: = 95.53 × 0.30 + 95.36 × 0.25 + 88.38 × 0.30 + 87.66 × 0.15
+              - paragraph [ref=e495]: = 28.7 + 23.8 + 26.5 + 13.1
+              - paragraph [ref=e496]: = 92.2 分
+          - generic [ref=e497]:
+            - generic [ref=e498]:
+              - paragraph [ref=e499]: 置信度
+              - generic [ref=e500]: 92%
+            - progressbar "置信度 92%" [ref=e502]
+  - button "AI 助手" [ref=e71]:
+    - img [ref=e72]
+    - generic [ref=e74]: AI 助手
+  - alert [ref=e322]
+  - button "Open Next.js Dev Tools" [ref=e329] [cursor=pointer]:
+    - img [ref=e330]
+  - generic [ref=e503]: "0"
