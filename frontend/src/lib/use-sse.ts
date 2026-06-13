@@ -43,8 +43,8 @@ export function useSSE(): UseSSEReturn {
         params.set('last_event_id', lastEventIdRef.current)
       }
 
-      // SSE 通过 Next.js 代理转发（相对路径），兼容本地和 Cloudflare Pages
-      const url = `/api/stream/notifications?${params.toString()}`
+      const apiBase = process.env.NEXT_PUBLIC_API_URL ?? ''
+      const url = `${apiBase}/api/stream/notifications?${params.toString()}`
       const es = new EventSource(url)
       esRef.current = es
 
