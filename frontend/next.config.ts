@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next'
 
-const backendUrl = process.env.BACKEND_URL ?? 'http://localhost:8002'
+let backendUrl = process.env.BACKEND_URL ?? 'http://localhost:8002'
+if (backendUrl && !backendUrl.startsWith('http')) {
+  backendUrl = `https://${backendUrl}`
+}
 
 const nextConfig: NextConfig = {
   output: process.env.STANDALONE === '1' ? 'standalone' : undefined,
