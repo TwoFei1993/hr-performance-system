@@ -14,13 +14,15 @@ bash scripts/start.sh
 # 前端：http://localhost:3004  （日志：logs/frontend.log）
 ```
 
+`start.sh` 会自动清理 `.next` 缓存再启动。**不要直接用 `pnpm dev`**，必须通过脚本，否则 `pnpm build` 后开发服务器会崩溃。
+
 手动启动：
 ```bash
-# 后端（在 backend/ 目录下）
-uv run uvicorn main:app --host 0.0.0.0 --port 8002 --reload
+# 后端
+cd backend && uv run uvicorn main:app --host 0.0.0.0 --port 8002 --reload
 
-# 前端（在 frontend/ 目录下）
-pnpm dev --port 3004
+# 前端
+cd frontend && rm -rf .next && pnpm dev --port 3004
 ```
 
 重置所有模拟数据：
@@ -30,64 +32,88 @@ curl -X POST http://localhost:8002/api/reset
 
 ## 环境变量
 
-将 `.env.example` 复制为 `.env`。LLM 功能只需配置 `MINIMAX_API_KEY`，未配置时 AI 秘书会优雅降级，不影响其他功能。
+将 `.env.example` 复制为 `.env`。LLM 功能只需配置 `MINIMAX_API_KEY`，未配置时 AI 秘书优雅降级。
 
 ## 前端验证
 
-每次修改前端代码后，必须在 `frontend/` 目录下运行 `pnpm build` 来捕获 TypeScript 错误。开发服务器不会暴露所有类型错误。
-
 ```bash
 cd frontend
-pnpm build    # TypeScript 全量检查
-pnpm lint     # ESLint 检查
+pnpm build    # TypeScript 全量检查（会覆盖 .next，之后需重启开发服务器）
+pnpm lint
 ```
+
+`pnpm build` 后必须重新运行 `bash scripts/start.sh` 才能恢复开发服务器。
+
+## 部署
+
+### 腾讯轻量云（生产，推荐演示用）
+
+```
+服务器：119.28.118.104
+前端：http://119.28.118.104:8080
+后端 API：http://119.28.118.104:8002
+```
+
+```bash
+# 首次安装
+bash ~/performance-agent/scripts/setup-server.sh
+
+# 启动/重启服务（pm2 守护）
+bash ~/performance-agent/scripts/start-prod.sh
+```
+
+服务器构建前端需加环境变量：`STANDALONE=1 pnpm build`。构建完成后需复制静态文件：
+```bash
+cp -r .next/static .next/standalone/.next/static
+cp -r public .next/standalone/public
+```
+
+### Cloudflare Pages（可选）
+
+- 构建命令：`cd frontend && npm install -g pnpm && pnpm install && npx @cloudflare/next-on-pages`
+- 输出目录：`frontend/.vercel/output/static`
+- 环境变量：`NEXT_PUBLIC_API_URL=https://perf-backend.shaoyife.workers.dev`
+- Compatibility flags（Production + Preview）：`nodejs_compat`
+- 动态路由页面需要 `export const runtime = 'edge'`（已在 `/agents/[name]` 和 `/employees/[id]` 添加）
+- Cloudflare Worker（`cloudflare-worker/worker.js`）代理后端请求，Worker 不能请求裸 IP，需通过域名
 
 ## 架构说明
 
 ### 请求链路
 
 ```
-前端 (3004)
-  → Next.js rewrite：/api/* → http://localhost:8002/api/*
-  → FastAPI (8002)
-  → SQLite：data/performance.db
-  → MiniMax API（仅用于对话和绩效分析）
+本地开发：
+  前端 (3004) → Next.js rewrite /api/* → FastAPI (8002) → SQLite
+
+Cloudflare Pages 生产：
+  浏览器 → Cloudflare Pages → Worker proxy → FastAPI (8002)
 ```
 
-所有前端 API 调用统一通过 `frontend/src/lib/api.ts`，组件不直接调用后端。
+`api.ts` 的 `BASE_URL = (NEXT_PUBLIC_API_URL ?? '') + '/api'`，本地为空走相对路径，生产指向 Worker 地址。SSE URL（`use-sse.ts`）同样读取此变量。
 
 ### 后端结构（`backend/`）
 
-- `main.py` —— 挂载所有路由到 `/api`，启动时执行 `init_db()` + APScheduler 定时任务
-- `routers/` —— 按业务域拆分：`employees`、`decisions`、`agents`、`stream`（SSE）、`reports`、`monthly_meeting`、`chat`、`reset`
-- `agents/` —— 4 阶段流水线，由 `/api/agents/*` 路由触发：
-  1. `data_collector.py` —— 生成并写入模拟员工数据
-  2. `analysis_agent.py` —— 调用 MiniMax 分析绩效
-  3. `decision_agent.py` —— 生成晋升/PIP/调薪等决策
-  4. `execution_agent.py` —— 执行已审批的决策
-- `services/database.py` —— SQLAlchemy async + aiosqlite；4 张表：`employees`、`decisions`、`reports`、`agent_logs`
-- `models/employee.py` —— 核心 Pydantic 模型 `EmployeeRecord`
+- `main.py` —— 路由挂载、CORS（`allow_origins=["*"]`）、APScheduler 定时任务
+- `routers/` —— 业务域：`employees`、`decisions`、`agents`、`stream`（SSE）、`reports`、`monthly_meeting`、`chat`、`reset`
+- `agents/` —— 4 阶段流水线：`data_collector` → `analysis_agent` → `decision_agent` → `execution_agent`
+- `services/database.py` —— SQLAlchemy async + aiosqlite，4 张表：`employees`、`decisions`、`reports`、`agent_logs`
 
 ### 前端结构（`frontend/src/`）
 
-- `app/` —— Next.js App Router 页面：`/`（主控台）、`/employees`、`/employees/[id]`、`/decisions`、`/agents`、`/hr-system`、`/monthly-meeting`
-- `components/` —— 按业务域组织，与页面结构对应
 - `lib/api.ts` —— 所有 API 调用集中在此
-- `lib/use-sse.ts` —— SSE Hook，用于实时接收 Agent 状态推送
-- `types/index.ts` —— TypeScript 类型定义，与后端 Pydantic 模型对应
-- `components/chat/ai-assistant.tsx` —— 悬浮 AI 秘书组件，挂载在所有页面
+- `lib/use-sse.ts` —— SSE Hook，实时接收 Agent 状态推送
+- `components/chat/ai-assistant.tsx` —— 悬浮 AI 秘书，挂载在所有页面
+- `components/agents/agent-network-diagram.tsx` —— 多智能体协作 SVG 图，GSAP Timeline 驱动动画
 
 ### 关键约定
 
-**模拟数据固定种子**：`data_collector.py::generate_mock_employees()` 使用 `random.seed(42)`，保证每次重置后全站120名员工数据完全一致。不要删除这行。
+**模拟数据固定种子**：`data_collector.py::generate_mock_employees()` 使用 `random.seed(42)`，保证重置后120名员工数据完全一致。不要删除这行。
 
-**评分权重**：OKR 30% + 360评估 25% + 业务指标 30% + 出勤履职 15% = 综合评分。推荐阈值：≥88 → 晋升，≥80 → 调薪，<45 → PIP，45–55 且下降趋势 → 一对一辅导。
+**评分权重**：OKR 30% + 360评估 25% + 业务指标 30% + 出勤履职 15%。推荐阈值：≥88 晋升，≥80 调薪，<45 PIP，45–55 且下降趋势 → 一对一辅导。
 
-**AI 秘书意图识别**（`routers/chat.py`）：员工查询和晋升意图在到达 MiniMax 之前被本地拦截处理。检测到晋升意图时，将员工真实 DB 数据传给 MiniMax 做诚实分析，**不得基于阈值编造理由**。使用 `</think>` 标签分割（而非正则删除）来提取 MiniMax 思考块之后的正文。
+**AI 秘书意图识别**（`routers/chat.py`）：员工查询和晋升意图在到达 MiniMax 前被本地拦截。晋升意图检测后将员工真实 DB 数据传给 MiniMax，**不得基于阈值编造理由**。用 `</think>` 标签分割提取正文。
 
-**重名员工**：120人模拟数据集中可能存在同名员工。`_find_employee_in_message` 返回第一个匹配结果。涉及姓名查找的功能，需同时用姓名 + 部门来消歧。
-
-**SSE 实时推送**：`routers/stream.py` 推送 Agent 流水线事件，前端通过 `use-sse.ts` 订阅，`/agents` 页面消费这些事件展示实时状态。
+**SSE**：`routers/stream.py` 推送 Agent 事件，`/agents` 页面消费展示实时状态。
 
 ## 数据库调试
 
@@ -107,3 +133,12 @@ async def q():
 asyncio.run(q())
 "
 ```
+
+## Git
+
+推送时如遇代理错误（`via 127.0.0.1:7890`）：
+```bash
+git -c http.proxy="" -c https.proxy="" push
+```
+
+版本标签 `v1.0-demo`：2026-06-13 功能完整的演示版本。
